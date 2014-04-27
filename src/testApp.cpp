@@ -11,7 +11,7 @@ void testApp::setup() {
 	box2d.createBounds();
 	box2d.setFPS(30.0);
 	box2d.registerGrabbing();
-	box2d.ground;
+	
 	
 }
 
@@ -55,17 +55,10 @@ void testApp::draw() {
 //--------------------------------------------------------------
 void testApp::keyPressed(int key) {
 	
-	if (key == 'g'){
-		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
-		circles.back().get()->setPhysics(30.0, 0.73, 0.5);
-		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, 5);
-	}
-
-
 	if(key == 'c') {
 		float r = ofRandom(4, 20);
 		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
-		circles.back().get()->setPhysics(30.0, 0.73, 0.5);
+		circles.back().get()->setPhysics(3.0, 0.53, 0.1);
 		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
 		
 	}
