@@ -115,6 +115,7 @@
     <ClCompile Include="..\libs\Box2D\Dynamics\Joints\b2WheelJoint.cpp" />
     <ClCompile Include="..\libs\Box2D\Rope\b2Rope.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Module_Chateau\Src\Grains.cpp" />
     <ClCompile Include="src\testApp.cpp" />
     <ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2d.cpp" />
     <ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2dBaseShape.cpp" />
@@ -171,6 +172,9 @@
     <ClInclude Include="..\libs\Box2D\Dynamics\Joints\b2RopeJoint.h" />
     <ClInclude Include="..\libs\Box2D\Dynamics\Joints\b2WheelJoint.h" />
     <ClInclude Include="..\libs\Box2D\Rope\b2Rope.h" />
+    <ClInclude Include="src\Module_Chateau\Header\Grains.h" />
+    <ClInclude Include="src\Module_Chateau\Header\ObjetPhysique.h" />
+    <ClInclude Include="src\Module_Chateau\Header\Position.h" />
     <ClInclude Include="src\testApp.h" />
     <ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2d.h" />
     <ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2dBaseShape.h" />
@@ -221,6 +225,7 @@
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\dpoint.hpp" />
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle.h" />
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle_impl.hpp" />
+    <ClInclude Include="src\Util\Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

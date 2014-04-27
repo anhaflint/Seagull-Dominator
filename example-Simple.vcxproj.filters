@@ -166,6 +166,9 @@
     <ClCompile Include="..\libs\Box2D\Collision\Shapes\b2ChainShape.cpp">
       <Filter>addons\ofxBox2d\libs\Box2D\Collision\Shapes</Filter>
     </ClCompile>
+    <ClCompile Include="src\Module_Chateau\Src\Grains.cpp">
+      <Filter>src\Module_Chateau\Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -209,6 +212,18 @@
     </Filter>
     <Filter Include="addons\ofxBox2d\libs\Box2D\Rope">
       <UniqueIdentifier>{5920c583-ad20-458c-a5fe-8d3247d9adee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Module_Chateau">
+      <UniqueIdentifier>{b37e9609-b864-4791-89ba-742e5a448e82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Module_Chateau\Header">
+      <UniqueIdentifier>{9bdd2d86-f7e4-40e4-b3ef-474afe2136c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Module_Chateau\Src">
+      <UniqueIdentifier>{ec5e49c8-e7e8-4d6a-8280-6d632c01fa3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Util">
+      <UniqueIdentifier>{4621e676-16e0-46f1-8749-5461ee786757}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -400,6 +415,18 @@
     </ClInclude>
     <ClInclude Include="..\libs\Box2D\Collision\Shapes\b2ChainShape.h">
       <Filter>addons\ofxBox2d\libs\Box2D\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Module_Chateau\Header\ObjetPhysique.h">
+      <Filter>src\Module_Chateau\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Module_Chateau\Header\Grains.h">
+      <Filter>src\Module_Chateau\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Module_Chateau\Header\Position.h">
+      <Filter>src\Module_Chateau\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Util\Timer.h">
+      <Filter>src\Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

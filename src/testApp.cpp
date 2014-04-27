@@ -1,5 +1,5 @@
 #include "testApp.h"
-
+#include "Module_Chateau\Header\Grains.h"
 //--------------------------------------------------------------
 void testApp::setup() {
 	ofSetVerticalSync(true);
@@ -11,13 +11,15 @@ void testApp::setup() {
 	box2d.createBounds();
 	box2d.setFPS(30.0);
 	box2d.registerGrabbing();
-	
+	box2d.ground;
 	
 }
 
 //--------------------------------------------------------------
 void testApp::update() {
-	box2d.update();	
+	box2d.update();
+	//Disparition
+
 }
 
 
@@ -41,7 +43,6 @@ void testApp::draw() {
 	box2d.drawGround();
 	
 	
-	
 	string info = "";
 	info += "Press [c] for circles\n";
 	info += "Press [b] for blocks\n";
@@ -55,10 +56,16 @@ void testApp::draw() {
 //--------------------------------------------------------------
 void testApp::keyPressed(int key) {
 	
+	if (key == 'g'){
+			Grains g = new Grains(50, 1, new Position(mouseX, mouseY));
+		
+	}
+
+
 	if(key == 'c') {
 		float r = ofRandom(4, 20);
 		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
-		circles.back().get()->setPhysics(3.0, 0.53, 0.1);
+		circles.back().get()->setPhysics(30.0, 0.73, 0.5);
 		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
 		
 	}
