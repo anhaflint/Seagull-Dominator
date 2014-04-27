@@ -70,6 +70,14 @@ void testApp::keyPressed(int key) {
 		
 	}
 	
+	if (key == 'b') {
+		float r = ofRandom(4, 20);
+		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
+		circles.back().get()->setPhysics(9.0, 0.7, 0.6);
+		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
+
+	}
+
 	if(key == 'b') {
 		float w = ofRandom(4, 20);
 		float h = ofRandom(4, 20);
