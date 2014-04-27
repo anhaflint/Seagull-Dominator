@@ -40,6 +40,8 @@
 # Example-Simple
 *.pbxproj
 *.xcscheme
+*.opensdf
+*.filters
 
 # Obj
 # Release
