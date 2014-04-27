@@ -23,6 +23,18 @@
 
 # Added by Anha 27/04/2014
 # OF Files
+*.sdf
+
+# bin
+*.exp
+*.ilk
+*.pdb
+
+# Example-Simple
+*.pbxproj
+*.xcscheme
+*.opensdf
+*.filters
 
 # Obj
 # Release
