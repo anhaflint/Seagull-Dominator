@@ -23,25 +23,6 @@
 
 # Added by Anha 27/04/2014
 # OF Files
-*.plist
-*.workspace
-*.user
-*.vcxproj
-*.sln
-*.sdf
-*.cbp
-*.xcconfig
-
-# bin
-*.exp
-*.ilk
-*.pdb
-
-# Example-Simple
-*.pbxproj
-*.xcscheme
-*.opensdf
-*.filters
 
 # Obj
 # Release
