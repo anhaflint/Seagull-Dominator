@@ -19,13 +19,11 @@ void testApp::setup() {
 void testApp::update() {
 	box2d.update();
 	//Disparition
-
 }
 
 
 //--------------------------------------------------------------
 void testApp::draw() {
-	
 	
 	for(int i=0; i<circles.size(); i++) {
 		ofFill();
@@ -39,6 +37,12 @@ void testApp::draw() {
 		boxes[i].get()->draw();
 	}
 
+	// Ajouté par Claire -----------------------------------------
+	for (int i = 0; i < grains.size(); i++) {
+		ofFill();
+		ofSetHexColor(0xBF2545);
+		grains[i].get()->draw();
+	}
 	// draw the ground
 	box2d.drawGround();
 	
@@ -56,11 +60,19 @@ void testApp::draw() {
 //--------------------------------------------------------------
 void testApp::keyPressed(int key) {
 	
+	// Tests Claire
 	if (key == 'g'){
-			Grains g = new Grains(50, 1, new Position(mouseX, mouseY));
-		
+		//Grains(float density, float size, ofVec2f position)
+		/* essai, ne pas effacer :)
+		ofVec2f v1;
+		v1.set(mouseX, mouseY);
+		Grains g(30.0, 1.0, v1); 
+		*/
+		float r = ofRandom(4, 20);
+		grains.push_back(ofPtr<Grains>(new Grains));
+		grains.back().get()->setPhysics(30.0, 0.73, 0.5);
+		grains.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
 	}
-
 
 	if(key == 'c') {
 		float r = ofRandom(4, 20);
@@ -71,21 +83,24 @@ void testApp::keyPressed(int key) {
 	}
 	
 	if (key == 'b') {
-		float r = ofRandom(4, 20);
 		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
-		circles.back().get()->setPhysics(9.0, 0.7, 0.6);
-		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
+		circles.back().get()->setPhysics(1.0, 0.2, 10);
+		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, 1);
 
 	}
 
-	if(key == 'b') {
-		float w = ofRandom(4, 20);
-		float h = ofRandom(4, 20);
-		boxes.push_back(ofPtr<ofxBox2dRect>(new ofxBox2dRect));
-		boxes.back().get()->setPhysics(3.0, 0.53, 0.1);
-		boxes.back().get()->setup(box2d.getWorld(), mouseX, mouseY, w, h);
+	if (key == 'b') {		//Tests pour avoir la taille d'un grain et faire des blocs avec une boucle, resultat : 
+								//Il faut faire des blocs avec ofxBox2dRect avec une texture de grains pour paraitre, et
+								//quand il y a contact le faire devenir un amat de grain, mais sinon tant au niveau des fps et
+								//de la cohésion des blocs ça ne marche pas
+		for (int longueur = 0; longueur < 10; longueur++){
+			for (int largeur = 0; largeur < 5; largeur++){
+				circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
+				circles.back().get()->setPhysics(1.0, 0, 10000000000000);
+				circles.back().get()->setup(box2d.getWorld(), mouseX + longueur*2, mouseY + largeur*2, 1);
+			}
+		}
 	}
-	
 	if(key == 't') ofToggleFullscreen();
 }
 

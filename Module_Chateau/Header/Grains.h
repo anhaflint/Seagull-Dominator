@@ -6,21 +6,26 @@
 #include "ofxBox2d.h"
 #include "ofMain.h"
 #include "../Header/Position.h"
+#include "ofxBox2dCircle.h"
 
-class Grains : public ObjetPhysique {
+class Grains : public ObjetPhysique, public ofxBox2dCircle {
 protected:
-	int densite;
-	int taille;
+	//int densite; en héritant de ofxBox2dCirlce on a acces a la density du circle deja...
+	// int taille; idem : circle.getRadius
 	Timer timer;
-	Position precedente;
-	Position courant;
+	ofVec2f prec;
+	ofVec2f current;
+	// Position precedente; // ofVec2f plutot ? Déjà géré par openframeworks
+	// Position courant; // idem
 	ofxBox2d                            box2d;			  //	the box2d world
-	vector    <ofPtr<ofxBox2dCircle> >	circles;		  //	default box2d circles
+	//vector    <ofPtr<ofxBox2dCircle>>	circles;		  //	default box2d circles
 	
 public:
-	Grains(int, int, Position );
-	int deplacement(Position courant, Position precedent);
+	Grains();
+	Grains(float, float, ofVec2f);
+	int deplacement(ofVec2f courant, ofVec2f precedent);
 	void disparition();
+	virtual void draw();
 };
 
 #endif

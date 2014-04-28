@@ -1,12 +1,14 @@
+#pragma once
 #include <time.h>
 #include "Position.h"
+#include "ofMain.h"
 
 class ObjetPhysique {
 protected:
-	Position pos;
+	ofVec2f pos;
 public:
-	ObjetPhysique(){};
-	ObjetPhysique(Position Pos) :pos(Pos){};
+	ObjetPhysique(){}
+	ObjetPhysique(ofVec2f Pos) :pos(Pos){}
 };
 
 
