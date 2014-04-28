@@ -19,13 +19,11 @@ void testApp::setup() {
 void testApp::update() {
 	box2d.update();
 	//Disparition
-
 }
 
 
 //--------------------------------------------------------------
 void testApp::draw() {
-	
 	
 	for(int i=0; i<circles.size(); i++) {
 		ofFill();
@@ -39,6 +37,12 @@ void testApp::draw() {
 		boxes[i].get()->draw();
 	}
 
+	// Ajouté par Claire -----------------------------------------
+	for (int i = 0; i < grains.size(); i++) {
+		ofFill();
+		ofSetHexColor(0xBF2545);
+		grains[i].get()->draw();
+	}
 	// draw the ground
 	box2d.drawGround();
 	
@@ -56,11 +60,19 @@ void testApp::draw() {
 //--------------------------------------------------------------
 void testApp::keyPressed(int key) {
 	
+	// Tests Claire
 	if (key == 'g'){
-			Grains g = new Grains(50, 1, new Position(mouseX, mouseY));
-		
+		//Grains(float density, float size, ofVec2f position)
+		/* essai, ne pas effacer :)
+		ofVec2f v1;
+		v1.set(mouseX, mouseY);
+		Grains g(30.0, 1.0, v1); 
+		*/
+		float r = ofRandom(4, 20);
+		grains.push_back(ofPtr<Grains>(new Grains));
+		grains.back().get()->setPhysics(30.0, 0.73, 0.5);
+		grains.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
 	}
-
 
 	if(key == 'c') {
 		float r = ofRandom(4, 20);
