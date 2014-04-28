@@ -68,7 +68,7 @@ void testApp::keyPressed(int key) {
 		v1.set(mouseX, mouseY);
 		Grains g(30.0, 1.0, v1); 
 		*/
-		float r = ofRandom(4, 20);
+		float r = 10.0;
 		for (int i = 0; i < 5; i++) {
 			grains.push_back(ofPtr<Grains>(new Grains));
 			grains.back().get()->setPhysics(30.0, 0.73, 0.5);
@@ -88,11 +88,12 @@ void testApp::keyPressed(int key) {
 								//Il faut faire des blocs avec ofxBox2dRect avec une texture de grains pour paraitre, et
 								//quand il y a contact le faire devenir un amat de grain, mais sinon tant au niveau des fps et
 								//de la cohésion des blocs ça ne marche pas
+
 		for (int longueur = 0; longueur < 10; longueur++){
 			for (int largeur = 0; largeur < 5; largeur++){
-				circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
-				circles.back().get()->setPhysics(1.0, 0, 10000000000000);
-				circles.back().get()->setup(box2d.getWorld(), mouseX + longueur*2, mouseY + largeur*2, 1);
+				grains.push_back(ofPtr<Grains>(new Grains));
+				grains.back().get()->setPhysics(10.0, 0, 10000000000000);
+				grains.back().get()->setup(box2d.getWorld(), mouseX + longueur*2, mouseY + largeur*2, 1);
 			}
 		}
 	}
