@@ -22,8 +22,8 @@ protected:
 	
 public:
 	Grains();
-	Grains(float, float, ofVec2f);
-	int deplacement(ofVec2f courant, ofVec2f precedent);
+	Grains(float, float, ofVec2f); // Modifié le type de Position vers ofVec2f
+	int deplacement(ofVec2f courant, ofVec2f precedent); // Modifié le type de position vers ofVec2f
 	void disparition();
 	virtual void draw();
 };
