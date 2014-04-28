@@ -12,7 +12,7 @@ protected :
 	int base; 
 	int height;
 	int nbGrains;
-	vector <ofPtr<ofxBox2dCircle>> bloc;
+	vector <ofPtr<Grains>> bloc;
 	
 
 public : 

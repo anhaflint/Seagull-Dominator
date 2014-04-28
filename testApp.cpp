@@ -69,9 +69,11 @@ void testApp::keyPressed(int key) {
 		Grains g(30.0, 1.0, v1); 
 		*/
 		float r = ofRandom(4, 20);
-		grains.push_back(ofPtr<Grains>(new Grains));
-		grains.back().get()->setPhysics(30.0, 0.73, 0.5);
-		grains.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
+		for (int i = 0; i < 5; i++) {
+			grains.push_back(ofPtr<Grains>(new Grains));
+			grains.back().get()->setPhysics(30.0, 0.73, 0.5);
+			grains.back().get()->setup(box2d.getWorld(), mouseX+i, mouseY+i, r);
+		}
 	}
 
 	if(key == 'c') {
