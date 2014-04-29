@@ -1,4 +1,6 @@
 #include "testApp.h"
+#include <stdio.h>
+#include <time.h>
 #include "Module_Chateau\Header\Grains.h"
 //--------------------------------------------------------------
 void testApp::setup() {
@@ -73,6 +75,14 @@ void testApp::draw() {
 	info += "FPS: "+ofToString(ofGetFrameRate(), 1)+"\n";
 	ofSetHexColor(0x444342);
 	ofDrawBitmapString(info, 30, 30);
+	/*
+	for (int longueur = 0; longueur < 20; longueur++){
+		for (int largeur = 0; largeur < 70; largeur++){
+			ofFill();
+			ofSetColor(0, 2 + longueur * 20, 2 + largeur * 20);
+			ofRect(400 + longueur * 2, 720 - largeur * 2, 2, 2);
+		}
+	}*/
 }
 
 //--------------------------------------------------------------
@@ -137,13 +147,19 @@ void testApp::keyPressed(int key) {
 				boxes.back().get()->setPhysics(10.0, 0, 1);
 				boxes.back().get()->setup(box2d.getWorld(), mouseX + longueur * 10, mouseY - hauteur * 10, 10, 10);
 				boxes.back().get()->bodyDef.active = false;
-			}
-		}
+
+
+	if(key == 'c') {
+		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
+		circles.back().get()->setPhysics(2, 0.73, 0.5);
+		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, 40);
+		
+	}
+
+
 
 		if (key == 't') ofToggleFullscreen();
-	}
 }
-
 //--------------------------------------------------------------
 void testApp::keyReleased(int key) {
 }

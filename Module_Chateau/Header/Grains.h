@@ -8,7 +8,7 @@
 #include "../Header/Position.h"
 #include "ofxBox2dCircle.h"
 
-class Grains : public ObjetPhysique, public ofxBox2dCircle {
+class Grains : public ObjetPhysique, public ofxBox2dRect {
 protected:
 	//int densite; en héritant de ofxBox2dCirlce on a acces a la density du circle deja...
 	// int taille; idem : circle.getRadius
@@ -22,7 +22,7 @@ protected:
 	
 public:
 	Grains();
-	Grains(float, float, ofVec2f); // Modifié le type de Position vers ofVec2f
+	Grains(ofVec2f); // Modifié le type de Position vers ofVec2f
 	int deplacement(ofVec2f courant, ofVec2f precedent); // Modifié le type de position vers ofVec2f
 	void disparition();
 	virtual void draw();

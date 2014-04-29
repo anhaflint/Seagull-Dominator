@@ -27,6 +27,6 @@ public:
 	vector <ofPtr<Grains>> grains;
 	vector    <ofPtr<ofxBox2dCircle> >	circles;		//	default box2d circles
 	vector	  <ofPtr<ofxBox2dRect> >	boxes;			  //	defalut box2d rects
-	
+	b2WeldJointDef weldJointDef;
 };
 
