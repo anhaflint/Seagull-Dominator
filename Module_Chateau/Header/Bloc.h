@@ -4,7 +4,6 @@
 #include "ofMain.h"
 #include "Module_Chateau\Header\ObjetPhysique.h"
 #include "Module_Chateau\Header\Grains.h"
-#include "ofxBox2DCircle.h"
 
 
 class Bloc : public ObjetPhysique {
@@ -16,8 +15,9 @@ protected :
 	
 
 public : 
-	Bloc();
-	Bloc(int, int);
+	Bloc(int key, ofxBox2d box2d, int mouseX, int mouseY);
+	virtual void draw();
+	~Bloc();
 };
 
 

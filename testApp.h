@@ -2,6 +2,7 @@
 #include "ofMain.h"
 #include "ofxBox2d.h"
 #include "Module_Chateau\Header\Grains.h"
+#include "Module_Chateau\Header\Bloc.h"
 
 // -------------------------------------------------
 
@@ -21,7 +22,6 @@ public:
 	void mouseReleased(int x, int y, int button);
 	void resized(int w, int h);
 	
-    
 	ofxBox2d                            box2d;			  //	the box2d world
 	// vector    <ofPtr<ofxBox2dCircle> >	grains;
 	vector <ofPtr<Grains>> grains;
