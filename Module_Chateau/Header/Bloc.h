@@ -11,11 +11,11 @@ protected :
 	int base; 
 	int height;
 	int nbGrains;
-	vector <ofPtr<Grains>> bloc;
+	vector <ofPtr<Grains>> grains;
 	
 
 public : 
-	Bloc(int key, ofxBox2d box2d, int mouseX, int mouseY);
+	Bloc(int key, ofxBox2d& box2d, int mouseX, int mouseY);
 	virtual void draw();
 	~Bloc();
 };
