@@ -1,10 +1,10 @@
 #include "testApp.h"
 #include <stdio.h>
 #include <time.h>
-#include "Module_Chateau\Header\Grains.h"
+
 //--------------------------------------------------------------
 void testApp::setup() {
-	ofSetVerticalSync(true);
+	ofSetVerticalSync(false);
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	
@@ -28,10 +28,11 @@ void testApp::draw() {
 	
 	/* Dessin d'un bloc
 	 */
+	if (castle != NULL)
+		castle->draw();
+
 	if (bloc != NULL)
 		bloc->draw();
-
-	
 
 	for (int i = 0; i<circles.size(); i++) {
 		ofFill();
@@ -57,8 +58,17 @@ void testApp::draw() {
 void testApp::keyPressed(int key) {
 
 	// Tests Claire
-	bloc = ofPtr<Bloc>(new Bloc(key, box2d, mouseX, mouseY));
-
+	if (key == 'b') {
+		bloc = ofPtr<Bloc>(new Bloc(20, 10, box2d, mouseX, mouseY));
+		printf("la longueur est : %d", bloc->getLength());
+		printf("la hauteur est  : %d", bloc->getHeight());
+	}
+		
+	if (key == 'a') {
+		castle = ofPtr<Castle>(new Castle(box2d, mouseX, mouseY));
+		printf("le nombre de grains est : %d", castle->getNbGrains());
+	}
+		
 	if (key == 'c') {
 		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
 		circles.back().get()->setPhysics(2, 0.73, 0.5);

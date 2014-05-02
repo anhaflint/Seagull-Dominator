@@ -1,38 +1,17 @@
 #include "Module_Chateau\Header\Bloc.h"
 
 
-Bloc::Bloc(int key, ofxBox2d& box2d, int mouseX, int mouseY) {
-	if (key == 'j') {
-		for (int hauteur = 0; hauteur < 5; hauteur++){
-			for (int longueur = 0; longueur < 10; longueur++){
-				grains.push_back(ofPtr<Grains>(new Grains));
-				grains.back().get()->setPhysics(10.0, 0, 1);
-				grains.back().get()->setup(box2d.getWorld(), mouseX + longueur * 10, mouseY - hauteur * 10, 10, 10);
-			}
+Bloc::Bloc(int length, int height, ofxBox2d& box2d, int mouseX, int mouseY) {
+	this->height = height;
+	this->length = length;
+	ofVec2f pos(mouseX, mouseY);
+	for (int hauteur = 0; hauteur < height; hauteur++){
+		for (int longueur = 0; longueur < length; longueur++){
+			grains.push_back(ofPtr<Grains>(new Grains(pos)));
+			grains.back().get()->setPhysics(10.0, 0, 1);
+			grains.back().get()->setup(box2d.getWorld(), mouseX + longueur*Grains::size, mouseY - hauteur*Grains::size, Grains::size, Grains::size);
 		}
 	}
-
-	if (key == 'g') {
-		for (int hauteur = 0; hauteur < 10; hauteur++){
-			for (int longueur = 0; longueur < 30; longueur++){
-				grains.push_back(ofPtr<Grains>(new Grains));
-				grains.back().get()->setPhysics(10.0, 0, 1);
-				grains.back().get()->setup(box2d.getWorld(), mouseX + longueur * 10, mouseY - hauteur * 10, 10, 10);
-			}
-		}
-	}
-
-
-	if (key == 'h') {
-		for (int hauteur = 0; hauteur < 7; hauteur++){
-			for (int longueur = 0; longueur < 15; longueur++){
-				grains.push_back(ofPtr<Grains>(new Grains));
-				grains.back().get()->setPhysics(10.0, 0, 1);
-				grains.back().get()->setup(box2d.getWorld(), mouseX + longueur * 10, mouseY - hauteur * 10, 10, 10);
-			}
-		}
-	}
-
 }
 
 void Bloc::draw() {

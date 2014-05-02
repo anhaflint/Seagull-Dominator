@@ -2,21 +2,23 @@
 
 #include "ofxBox2d.h"
 #include "ofMain.h"
-#include "Module_Chateau\Header\ObjetPhysique.h"
 #include "Module_Chateau\Header\Grains.h"
+#include "Module_Chateau\Header\ObjetPhysique.h"
 
 
 class Bloc : public ObjetPhysique {
 protected : 
-	int base; 
+	int length; 
 	int height;
 	int nbGrains;
 	vector <ofPtr<Grains>> grains;
-	
 
 public : 
-	Bloc(int key, ofxBox2d& box2d, int mouseX, int mouseY);
+	Bloc(int length, int height, ofxBox2d& box2d, int mouseX, int mouseY);
+	inline int getNbGrains(){ return length*height; }
 	virtual void draw();
+	inline int getLength() { return this->length; }
+	inline int getHeight() { return this->height; }
 	~Bloc();
 };
 

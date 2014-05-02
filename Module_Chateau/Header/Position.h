@@ -1,5 +1,5 @@
-#ifndef POSITION_H
-#define POSITION_H
+#pragma once 
+
 class Position {
 protected:
 	int x;
@@ -28,5 +28,3 @@ public:
 		return y;
 	}
 };
-
-#endif;

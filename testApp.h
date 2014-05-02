@@ -1,8 +1,7 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxBox2d.h"
-#include "Module_Chateau\Header\Grains.h"
-#include "Module_Chateau\Header\Bloc.h"
+#include "includes.h"
 
 // -------------------------------------------------
 
@@ -24,6 +23,7 @@ public:
 	
 	ofxBox2d  box2d;			  //	the box2d world
 	ofPtr<Bloc> bloc;
+	ofPtr<Castle> castle;
 	
 	vector    <ofPtr<ofxBox2dCircle> >	circles;		//	default box2d circles
 	vector	  <ofPtr<ofxBox2dRect> >	boxes;			  //	defalut box2d rects
