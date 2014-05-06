@@ -11,6 +11,7 @@ protected :
 	ofPtr<Bloc> med;
 	ofPtr<Bloc> top; 
 	int nbGrains;
+	ofImage sable;
 
 public :
 	Castle(ofxBox2d& box2d, int mouseX, int mouseY);

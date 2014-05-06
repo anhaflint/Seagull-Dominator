@@ -23,7 +23,8 @@ public:
 	
 	ofxBox2d  box2d;			  //	the box2d world
 	ofPtr<Bloc> bloc;
-	ofPtr<Castle> castle;
+	ofPtr<Castle> castle1, castle2;
+	ofImage background;
 	
 	vector    <ofPtr<ofxBox2dCircle> >	circles;		//	default box2d circles
 	vector	  <ofPtr<ofxBox2dRect> >	boxes;			  //	defalut box2d rects
