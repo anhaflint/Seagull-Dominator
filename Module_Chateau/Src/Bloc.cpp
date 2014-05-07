@@ -19,7 +19,7 @@ void Bloc::draw(ofImage img) {
 		ofNoFill();
 		ofSetHexColor(0xEFD807); //ofSetColor(255, 255, 255); pour la vrai image
 		//grains[i].get()->Grains::draw();
-		//img.draw(grains[i].get()->getPosition().x-7, grains[i].get()->getPosition().y-7,14,14);
+		img.draw(grains[i].get()->getPosition().x-7, grains[i].get()->getPosition().y-7,14,14);
 	}
 }
 

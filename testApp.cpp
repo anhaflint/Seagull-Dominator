@@ -103,10 +103,29 @@ void testApp::keyPressed(int key) {
 		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
 		circles.back().get()->setPhysics(6, 0.73, 0.5);
 		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, 40);
-		circles.back().get()->addForce(ofVec2f(0, -10), 0.1f); // Force qui contrecare la gravité
+		circles.back().get()->body->SetGravityScale(0);
 	}
 
+	float x = circles.back().get()->getPosition().x;
+	float y = circles.back().get()->getPosition().y;
+	if (key == OF_KEY_DOWN) {
+		printf("KEY_DOWN\n");
+		circles.back().get()->setPosition(ofVec2f(x, y + 20));
+	}
+	if (key == OF_KEY_UP) {
+		printf("KEY_UP\n");
+		circles.back().get()->setPosition(ofVec2f(x, y - 20));
+	}
 
+	if (key == OF_KEY_LEFT) {
+		printf("KEY_LEFT\n");
+		circles.back().get()->setPosition(ofVec2f(x - 20, y));
+	}
+
+	if (key == OF_KEY_RIGHT) {
+		printf("KEY_RIGHT\n");
+		circles.back().get()->setPosition(ofVec2f(x + 20 , y));
+	}
 
 	if (key == 't') ofToggleFullscreen();
 }
