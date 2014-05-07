@@ -1,12 +1,18 @@
 #include "testApp.h"
 #include <stdio.h>
 #include <time.h>
+#include "Util\functions.h"
+
+//Ajouté par claire
+
 
 //--------------------------------------------------------------
 void testApp::setup() {
 	ofSetVerticalSync(true);
 	//ofBackgroundHex(0xfdefc2);
-	background.loadImage("C:/Users/Quentin/Polytech/Mini Projet/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/background.gif");
+	char cwd[1024] = "";
+	strcat(cwd, getAbsolutePath());
+	background.loadImage(cwd);
 	
 	
 	
@@ -56,6 +62,7 @@ void testApp::draw() {
 	box2d.drawGround();
 
 
+
 	string info = "";
 	info += "Press [c] for circles\n";
 	info += "Press [b] for blocks\n";
@@ -96,7 +103,10 @@ void testApp::keyPressed(int key) {
 		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
 		circles.back().get()->setPhysics(6, 0.73, 0.5);
 		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, 40);
+		circles.back().get()->addForce(ofVec2f(0, -10), 0.1f); // Force qui contrecare la gravité
 	}
+
+
 
 	if (key == 't') ofToggleFullscreen();
 }
