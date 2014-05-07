@@ -3,4 +3,4 @@
 #include <string.h>
 #include <stdio.h>
 
-char* getAbsolutePath();
+char* getAbsolutePath(char* file);

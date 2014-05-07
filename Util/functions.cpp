@@ -1,6 +1,6 @@
 #include "functions.h"
 
-char* getAbsolutePath() {
+char* getAbsolutePath(char* file) {
 	char cwd[1024];
 	if (_getcwd(cwd, sizeof(cwd)) != NULL)
 		fprintf(stdout, "Current working dir: %s\n", cwd);
@@ -12,7 +12,8 @@ char* getAbsolutePath() {
 		}
 	}
 	printf("\ntaille de la chaine : %d\n", strlen(cwd));
-	strcat(cwd, "src/Img/background.gif");
+	strcat(cwd, "src/Img/");
+	strcat(cwd, file);
 	fprintf(stdout, "Current working dir after parsing: %s\n", cwd);
 	return cwd;
 }

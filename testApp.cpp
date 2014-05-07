@@ -11,7 +11,7 @@ void testApp::setup() {
 	ofSetVerticalSync(true);
 	//ofBackgroundHex(0xfdefc2);
 	char cwd[1024] = "";
-	strcat(cwd, getAbsolutePath());
+	strcat(cwd, getAbsolutePath("background.gif")); 
 	background.loadImage(cwd);
 	
 	
