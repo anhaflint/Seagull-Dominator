@@ -25,7 +25,7 @@ void testApp::setup() {
 	box2d.setIterations(8,3);
 	box2d.registerGrabbing();
 	box2d.ground;
-
+	
 	
 
 	
@@ -50,6 +50,8 @@ void testApp::draw() {
 	if (castle2 != NULL)
 		castle2->draw();
 
+	if (mouette != NULL)
+		mouette->draw();
 //	if (bloc != NULL)
 //		bloc->draw(sable);
 
@@ -79,7 +81,8 @@ void testApp::keyPressed(int key) {
 
 	//Si le grain sort du rectangle du chateau, disparition au bout d'un timer
 
-
+	bool left = false;
+	bool right = false;
 
 
 	// Tests Claire
@@ -103,30 +106,24 @@ void testApp::keyPressed(int key) {
 		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
 		circles.back().get()->setPhysics(6, 0.73, 0.5);
 		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, 40);
-		circles.back().get()->body->SetGravityScale(0);
 	}
 
-	float x = circles.back().get()->getPosition().x;
-	float y = circles.back().get()->getPosition().y;
-	if (key == OF_KEY_DOWN) {
-		printf("KEY_DOWN\n");
-		circles.back().get()->setPosition(ofVec2f(x, y + 20));
+	if (key == 'm') {
+		mouette = ofPtr<Mouette>(new Mouette(box2d));
 	}
+	
+	if (key == OF_KEY_DOWN) {
+	}
+
 	if (key == OF_KEY_UP) {
-		printf("KEY_UP\n");
-		circles.back().get()->setPosition(ofVec2f(x, y - 20));
 	}
 
 	if (key == OF_KEY_LEFT) {
-		printf("KEY_LEFT\n");
-		circles.back().get()->setPosition(ofVec2f(x - 20, y));
 	}
 
 	if (key == OF_KEY_RIGHT) {
-		printf("KEY_RIGHT\n");
-		circles.back().get()->setPosition(ofVec2f(x + 20 , y));
 	}
-
+	
 	if (key == 't') ofToggleFullscreen();
 }
 //--------------------------------------------------------------

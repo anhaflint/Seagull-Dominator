@@ -2,7 +2,7 @@
 #include "ofMain.h"
 #include "ofxBox2d.h"
 #include "includes.h"
-
+#include "Module_Mouette\Mouette.h"
 // -------------------------------------------------
 
 class testApp : public ofBaseApp {
@@ -12,6 +12,7 @@ public:
 	void setup();
 	void update();
 	void draw();
+
 	
 	void keyPressed(int key);
 	void keyReleased(int key);
@@ -22,6 +23,7 @@ public:
 	void resized(int w, int h);
 	
 	ofxBox2d  box2d;			  //	the box2d world
+	ofPtr<Mouette> mouette;
 	ofPtr<Bloc> bloc;
 	ofPtr<Castle> castle1, castle2;
 	ofImage background;
