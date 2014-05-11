@@ -1,4 +1,4 @@
-#include "Rope.h"
+#include "Module_Corde/header/rope.h"
 
 /* Constructeur */
 Rope::Rope(b2Vec2* pos, int length, ofxBox2d* box2d) : length(length), box2d(box2d)
