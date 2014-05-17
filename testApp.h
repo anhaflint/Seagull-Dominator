@@ -27,9 +27,17 @@ public:
 	ofPtr<Bloc> bloc;
 	ofPtr<Castle> castle1, castle2;
 	ofImage background;
-	
+	bool keyIsDown[4];
+
 	vector    <ofPtr<ofxBox2dCircle> >	circles;		//	default box2d circles
 	vector	  <ofPtr<ofxBox2dRect> >	boxes;			  //	defalut box2d rects
 	b2WeldJointDef weldJointDef;
 };
 
+
+enum _key{
+	LEFT,
+	UP,
+	RIGHT,
+	DOWN,
+};

@@ -11,7 +11,9 @@ private :
 public : 
 	Mouette(ofxBox2d&);
 	~Mouette();
-	void move(int key);
+	void move(float, float);
+	void diagmovedown(float, float);
+	void diagmoveup(float x, float y);
 	virtual void draw();
 };
 
@@ -19,6 +21,4 @@ enum _moveState{
 	MS_STOP,
 	MS_RIGHT,
 	MS_LEFT,
-	MS_UP,
-	MS_DOWN,
 };

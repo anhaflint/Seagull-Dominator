@@ -35,6 +35,18 @@ void testApp::setup() {
 void testApp::update() {
 	box2d.update();
 	//Disparition
+	if (keyIsDown[UP] && keyIsDown[LEFT]) {
+		mouette->diagmoveup(-20, 0);
+	}
+	if (keyIsDown[UP] && keyIsDown[RIGHT]) {
+		mouette->diagmoveup(+20, 0);
+	}
+	if (keyIsDown[DOWN] && keyIsDown[LEFT]) {
+		mouette->diagmovedown(-20,0);
+	}
+	if (keyIsDown[DOWN] && keyIsDown[RIGHT]) {
+		mouette->diagmovedown(+20, 0);
+	}
 }
 
 
@@ -78,56 +90,46 @@ void testApp::draw() {
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key) {
-
-	//Si le grain sort du rectangle du chateau, disparition au bout d'un timer
-
-	bool left = false;
-	bool right = false;
-
-
-	// Tests Claire
-	if (key == 'b') {
-		bloc = ofPtr<Bloc>(new Bloc(20, 10, box2d, mouseX, mouseY));
-		printf("la longueur est : %d", bloc->getLength());
-		printf("la hauteur est  : %d", bloc->getHeight());
-	}
-		
-	if (key == 'a') {
-		castle1 = ofPtr<Castle>(new Castle(box2d, mouseX, 720));
-		printf("le nombre de grains est : %d", castle1->getNbGrains());
+	if (key >= 356 && key <= 359) {
+		keyIsDown[key - 356] = true;
 	}
 
-	if (key == 'z') {
-		castle2 = ofPtr<Castle>(new Castle(box2d, mouseX, 720));
-		printf("le nombre de grains est : %d", castle2->getNbGrains());
-	}
-		
-	if (key == 'c') {
+	switch (key) {
+	case OF_KEY_DOWN :	
+		mouette->move(0, 20);
+		break;
+	case OF_KEY_UP :	
+		mouette->move(0, -20);
+		break;
+	case OF_KEY_LEFT :	
+		mouette->move(-20, 0);
+		break;
+	case OF_KEY_RIGHT : 
+		mouette->move(+20, 0);
+		break;
+	case 'm':			
+		mouette = ofPtr<Mouette>(new Mouette(box2d));
+		break;
+	case 'c':			
 		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
 		circles.back().get()->setPhysics(6, 0.73, 0.5);
 		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, 40);
-	}
-
-	if (key == 'm') {
-		mouette = ofPtr<Mouette>(new Mouette(box2d));
-	}
-	
-	if (key == OF_KEY_DOWN) {
-	}
-
-	if (key == OF_KEY_UP) {
-	}
-
-	if (key == OF_KEY_LEFT) {
-	}
-
-	if (key == OF_KEY_RIGHT) {
+		break;
+	case 'a' :
+		castle1 = ofPtr<Castle>(new Castle(box2d, mouseX, 720));
+		break;
+	case 't': 
+		ofToggleFullscreen();
+		break;
 	}
 	
-	if (key == 't') ofToggleFullscreen();
+	
 }
 //--------------------------------------------------------------
 void testApp::keyReleased(int key) {
+	if (key >= 356 && key <= 359) {
+		keyIsDown[key - 356] = false;
+	}
 }
 
 //--------------------------------------------------------------
