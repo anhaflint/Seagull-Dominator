@@ -1,7 +1,7 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxBox2d.h"
-#include "ofxBox2dDistanceJoint.h"
+#include "../../Joints/ofxBox2dDistanceJoint.h"
 
 class Rope
 {

@@ -3,6 +3,8 @@
 #include "ofxBox2d.h"
 #include "includes.h"
 #include "Module_Mouette\Mouette.h"
+#include "Module_Corde\header\Rope.h"
+
 // -------------------------------------------------
 
 class testApp : public ofBaseApp {
@@ -29,6 +31,8 @@ public:
 	ofImage background;
 	bool keyIsDown[4];
 
+	vector <ofPtr<Rope>> rope;
+	ofPtr<ofxBox2dCircle> boulet;
 	vector    <ofPtr<ofxBox2dCircle> >	circles;		//	default box2d circles
 	vector	  <ofPtr<ofxBox2dRect> >	boxes;			  //	defalut box2d rects
 	b2WeldJointDef weldJointDef;

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "Util\functions.h"
-
+#include "Module_Corde\header\Rope.h"
 //Ajouté par claire
 
 
@@ -13,7 +13,6 @@ void testApp::setup() {
 	char cwd[1024] = "";
 	strcat(cwd, getAbsolutePath("background.gif")); 
 	background.loadImage(cwd);
-	
 	
 	
 	ofSetLogLevel(OF_LOG_NOTICE);
@@ -72,6 +71,14 @@ void testApp::draw() {
 		ofSetHexColor(0xf6c738);
 		circles[i]->draw();
 	}
+
+	for (int i = 0; i<rope.size(); i++) {
+		ofFill();
+		ofSetHexColor(0xAA2000);
+		rope[i]->draw();
+	}
+
+
 	// draw the ground
 	box2d.drawGround();
 
@@ -93,7 +100,7 @@ void testApp::keyPressed(int key) {
 	if (key >= 356 && key <= 359) {
 		keyIsDown[key - 356] = true;
 	}
-
+	b2Vec2* vec = (b2Vec2*) new b2Vec2(mouseX, mouseY);
 	switch (key) {
 	case OF_KEY_DOWN :	
 		mouette->move(0, 20);
@@ -121,6 +128,27 @@ void testApp::keyPressed(int key) {
 	case 't': 
 		ofToggleFullscreen();
 		break;
+	case 'r':
+		rope.push_back(ofPtr<Rope>(new Rope(vec, 50, &box2d)));
+		break;
+	/*
+	case '+' :
+		for (int i = 0; i < rope.size(); i++){
+			rope.at(i)->grow(1);
+		}
+		break;
+	case '-' :
+		for (int i = 0; i < rope.size(); i++){
+			rope.at(i)->reduce(1);
+		}
+		*/
+	case 'l' :
+		if (!boulet && !rope.empty()){
+			boulet = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle());
+			boulet->setPhysics(6, 0.73, 0.5);
+			boulet->setup(box2d.getWorld(), rope.at(0)->getEndPosition().x, rope.at(0)->getEndPosition().y, 40);
+			rope.at(0)->joinEnd(boulet->body);
+		}
 	}
 	
 	
