@@ -4,6 +4,7 @@
 #include "includes.h"
 #include "Module_Mouette\Mouette.h"
 #include "Module_Corde\header\Rope.h"
+#include "Module_Joueur\Joueur.h"
 
 // -------------------------------------------------
 
@@ -26,8 +27,11 @@ public:
 	
 	ofxBox2d  box2d;			  //	the box2d world
 	ofPtr<Mouette> mouette;
-	ofPtr<Bloc> bloc;
 	ofPtr<Castle> castle1, castle2;
+	ofPtr<Joueur> player;
+	//test allocation de tout en meme temps
+	ofPtr<Rope> corde;
+
 	ofImage background;
 	bool keyIsDown[4];
 

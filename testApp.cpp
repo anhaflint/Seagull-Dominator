@@ -35,16 +35,16 @@ void testApp::update() {
 	box2d.update();
 	//Disparition
 	if (keyIsDown[UP] && keyIsDown[LEFT]) {
-		mouette->diagmoveup(-20, 0);
+		mouette->diagmoveup(-10, 0);
 	}
 	if (keyIsDown[UP] && keyIsDown[RIGHT]) {
-		mouette->diagmoveup(+20, 0);
+		mouette->diagmoveup(+10, 0);
 	}
 	if (keyIsDown[DOWN] && keyIsDown[LEFT]) {
-		mouette->diagmovedown(-20,0);
+		mouette->diagmovedown(-10,0);
 	}
 	if (keyIsDown[DOWN] && keyIsDown[RIGHT]) {
-		mouette->diagmovedown(+20, 0);
+		mouette->diagmovedown(+10, 0);
 	}
 }
 
@@ -63,8 +63,14 @@ void testApp::draw() {
 
 	if (mouette != NULL)
 		mouette->draw();
-//	if (bloc != NULL)
-//		bloc->draw(sable);
+
+	if (corde != NULL){
+		corde->draw();
+	}
+
+	if (player != NULL) {
+		player->draw();
+	}
 
 	for (int i = 0; i<circles.size(); i++) {
 		ofFill();
@@ -101,18 +107,23 @@ void testApp::keyPressed(int key) {
 		keyIsDown[key - 356] = true;
 	}
 	b2Vec2* vec = (b2Vec2*) new b2Vec2(mouseX, mouseY);
+	
+
+	b2Vec2* vecBegin;
+	b2Vec2 vecEnd;
+
 	switch (key) {
 	case OF_KEY_DOWN :	
-		mouette->move(0, 20);
+		mouette->move(0, 10);
 		break;
 	case OF_KEY_UP :	
-		mouette->move(0, -20);
+		mouette->move(0, -10);
 		break;
 	case OF_KEY_LEFT :	
-		mouette->move(-20, 0);
+		mouette->move(-10, 0); 
 		break;
 	case OF_KEY_RIGHT : 
-		mouette->move(+20, 0);
+		mouette->move(+10, 0);
 		break;
 	case 'm':			
 		mouette = ofPtr<Mouette>(new Mouette(box2d));
@@ -131,7 +142,14 @@ void testApp::keyPressed(int key) {
 	case 'r':
 		rope.push_back(ofPtr<Rope>(new Rope(vec, 50, &box2d)));
 		break;
+	case 'k':
+		player = ofPtr<Joueur>(new Joueur(box2d));
 	/*
+	mouette = ofPtr<Mouette>(new Mouette(box2d));
+	vecBegin = new b2Vec2(mouette->getPositionX() + mouette->radius, mouette->getPositionY());
+	corde = ofPtr<Rope>(new Rope(vecBegin, 30, &box2d));
+	corde->joinBegin(mouette->getBody()->body);
+	break;
 	case '+' :
 		for (int i = 0; i < rope.size(); i++){
 			rope.at(i)->grow(1);
@@ -146,7 +164,7 @@ void testApp::keyPressed(int key) {
 		if (!boulet && !rope.empty()){
 			boulet = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle());
 			boulet->setPhysics(6, 0.73, 0.5);
-			boulet->setup(box2d.getWorld(), rope.at(0)->getEndPosition().x, rope.at(0)->getEndPosition().y, 40);
+			boulet->setup(box2d.getWorld(), rope.at(0)->getEndPosition().x, rope.at(0)->getEndPosition().y, 140);
 			rope.at(0)->joinEnd(boulet->body);
 		}
 	}
