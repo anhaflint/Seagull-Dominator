@@ -1,9 +1,10 @@
-#pragma once
+#ifndef _GRAINS_H
+#define _GRAINS_H
 
 #include "ofxBox2d.h"
 #include "ofMain.h"
 #include "ofxBox2dRect.h"
-#include "Util\Timer.h"
+#include "Util\Header\Timer.h"
 #include "Module_Chateau\Header\ObjetPhysique.h"
 
 class Grains : public ObjetPhysique, public ofxBox2dRect {
@@ -19,3 +20,5 @@ public:
 	void disparition();
 	virtual void draw();
 };
+
+#endif

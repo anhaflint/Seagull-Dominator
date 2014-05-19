@@ -1,7 +1,12 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxBox2d.h"
-#include "includes.h"
+#include <stdio.h>
+#include <time.h>
+#include "Gestion_Jeu\Header\PageJeu.h"
+#include "Gestion_Jeu\Header\Menu_Principale.h"
+#include "Util\Header\Fenetre.h"
+#include "Gestion_Jeu\Header\GestionnairePage.h"
 
 // -------------------------------------------------
 
@@ -21,13 +26,11 @@ public:
 	void mouseReleased(int x, int y, int button);
 	void resized(int w, int h);
 	
-	ofxBox2d  box2d;			  //	the box2d world
-	ofPtr<Bloc> bloc;
-	ofPtr<Castle> castle1, castle2;
-	ofImage background;
 	
-	vector    <ofPtr<ofxBox2dCircle> >	circles;		//	default box2d circles
-	vector	  <ofPtr<ofxBox2dRect> >	boxes;			  //	defalut box2d rects
-	b2WeldJointDef weldJointDef;
+	Affichage *affichage;
+	Fenetre *fenetre;
+
+private:
+	Menu_Principale *menu_principale;
 };
 
