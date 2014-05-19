@@ -6,12 +6,12 @@
 class Rope
 {
 private:
-	vector<ofPtr<ofxBox2dRect>> rects; // Le corps de la corde
+	vector<ofPtr<ofxBox2dCircle>> circles; // Le corps de la corde
 	vector<ofPtr<ofxBox2dDistanceJoint>> joints; // Les jointures entre chaque morceaux de la corde
 	int length; // Sa longueur
 	ofxBox2d* box2d; // Un pointeur vers le 'jeu'. On en a besoin pour recuperer le World dans certaines fonctions
-	const float w = 5.0f; // La largeur
-	const float h = 5.0f; // L'hauteur
+	const float radius = 5.0f; // La largeur
+	//const float h = 5.0f; // L'hauteur
 public:
 	Rope(b2Vec2* pos, int length, ofxBox2d* box2d); // Constructeur
 	~Rope();
@@ -20,7 +20,7 @@ public:
 	void grow(int n); // Ajoute n morceaux à la corde
 	void reduce(int n); // Retire n morceaux à la corde
 	void setPosition(b2Vec2* pos); // Modifie la position du début de la corde - NON TESTEE
-	inline b2Vec2 getEndPosition(){ return rects.at(length - 1).get()->body->GetWorldCenter(); } // Accesseur à la position du dernier élément de la corde
-	inline b2Vec2 getBeginPosition(){ return rects.at(0).get()->body->GetWorldCenter(); } // Accesseur à la position du premier élément de la corde
+	inline b2Vec2 getEndPosition(){ return circles.at(length - 1).get()->body->GetWorldCenter(); } // Accesseur à la position du dernier élément de la corde
+	inline b2Vec2 getBeginPosition(){ return circles.at(0).get()->body->GetWorldCenter(); } // Accesseur à la position du premier élément de la corde
 	void draw(); // Dessine la corde
 };
