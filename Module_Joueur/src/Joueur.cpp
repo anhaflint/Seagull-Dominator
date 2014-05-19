@@ -1,6 +1,7 @@
 #include "Module_Joueur/header/Joueur.h"
 
 
+
 Joueur::Joueur(ofxBox2d& box2d) {
 	// Allocation de la mouette 
 	mouette = ofPtr<Mouette>(new Mouette(box2d));

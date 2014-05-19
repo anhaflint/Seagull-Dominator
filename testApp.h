@@ -17,6 +17,7 @@ public:
 	void setup();
 	void update();
 	void draw();
+
 	
 	void keyPressed(int key);
 	void keyReleased(int key);
@@ -25,7 +26,7 @@ public:
 	void mousePressed(int x, int y, int button);
 	void mouseReleased(int x, int y, int button);
 	void resized(int w, int h);
-	
+
 	
 	Affichage *affichage;
 	Fenetre *fenetre;
@@ -34,3 +35,10 @@ private:
 	Menu_Principale *menu_principale;
 };
 
+
+enum _key{
+	LEFT,
+	UP,
+	RIGHT,
+	DOWN,
+};

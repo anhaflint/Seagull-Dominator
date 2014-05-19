@@ -1,6 +1,7 @@
 #include "Module_Mouette/header/Mouette.h"
 
 
+
 Mouette::Mouette(ofxBox2d& box2d) {
 	this->mouette = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
 	mouette->setPhysics(6, 0.73, 0.5);
