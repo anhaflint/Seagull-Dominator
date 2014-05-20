@@ -35,10 +35,3 @@ private:
 	Menu_Principale *menu_principale;
 };
 
-
-enum _key{
-	LEFT,
-	UP,
-	RIGHT,
-	DOWN,
-};
