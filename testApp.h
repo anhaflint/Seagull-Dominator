@@ -34,4 +34,7 @@ public:
 private:
 	Menu_Principale *menu_principale;
 };
+<<<<<<< HEAD
+=======
 
+>>>>>>> 9805d3d7a06b3069d51743bbb5a34b6c96d623b5

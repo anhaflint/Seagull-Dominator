@@ -24,7 +24,6 @@ void Menu_Principale::update() {
 void Menu_Principale::draw() {
 	ofSetColor(255, 255, 255);	//Image claire
 	this->fenetre->aff_fenetre((IMG)select, 1280, 720);
-		
 }
 
 //--------------------------------------------------------------
