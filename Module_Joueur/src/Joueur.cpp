@@ -5,6 +5,7 @@
 Joueur::Joueur(ofxBox2d& box2d) {
 	// Allocation de la mouette 
 	mouette = ofPtr<Mouette>(new Mouette(box2d));
+	mouette->getBody()->body->SetGravityScale(-1);
 	b2Vec2* vecBegin = new b2Vec2(mouette->getPositionX() + mouette->radius, mouette->getPositionY());
 	rope = ofPtr<Rope>(new Rope(vecBegin, 30, &box2d));
 	rope->joinBegin(mouette->getBody()->body);

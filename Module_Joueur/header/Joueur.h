@@ -22,4 +22,5 @@ public :
 	void move(float, float);
 	void diagmovedown(float, float);
 	void diagmoveup(float x, float y);
+
 };

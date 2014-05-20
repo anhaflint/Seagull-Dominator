@@ -7,7 +7,7 @@ Rope::Rope(b2Vec2* pos, int length, ofxBox2d* box2d) : length(length), box2d(box
 	/* Crees les morceaux de la corde */
 	for (i = 0; i < length; i++){
 		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle)); // Instancie de nouveaux rectangles
-		circles.back().get()->setPhysics(20.0, 0, 15); // Modifies les proprietes physiques du nouveau morceau
+		circles.back().get()->setPhysics(10, 0, 15); // Modifies les proprietes physiques du nouveau morceau
 		circles.back().get()->setup(box2d->getWorld(), pos->x, pos->y, radius); // Definie sa position et sa taille
 		circles.back().get()->fixture.filter.groupIndex = -5; // Ajoute le morceau au groupe des autres morceaux, afin d'empecher qu'ils ne se touchent/percutent (collide)
 		pos->y -= radius; // Le morceau suivant sera ajouté juste en dessous du morceau courant
@@ -15,17 +15,25 @@ Rope::Rope(b2Vec2* pos, int length, ofxBox2d* box2d) : length(length), box2d(box
 	}
 	
 	circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
-	circles.back().get()->setPhysics(2, 0.1, 5);
+	circles.back().get()->setPhysics(20, 0.1, 5);
 	circles.back().get()->setup(box2d->getWorld(), pos->x, pos->y, 40.0f);
 	circles.back().get()->fixture.filter.groupIndex = -5;
-	pos->y -= radius;
+	pos->y -= 40.0f;
 	
+
+	circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
+	circles.back().get()->setPhysics(2, 0.1, 5);
+	circles.back().get()->setup(box2d->getWorld(), pos->x, pos->y, 0.1f);
+	circles.back().get()->fixture.filter.groupIndex = -5;
+	pos->y -= 0.1f;
+
 	/* Les 2 attaches du joints */
 	b2Vec2* anchor1 = new b2Vec2();
 	b2Vec2* anchor2 = new b2Vec2();
+	length += 2;
 
 	/* Pour chaque morceaux-1, ajoute un joint entre chaque */
-	for (int i = 1; i < length+1; i++) {
+	for (int i = 1; i < length; i++) {
 		/* Les 2 attaches seront au niveau du centre de gravité de chaque morceaux */
 		*anchor1 = circles[i - 1].get()->body->GetWorldCenter();
 		*anchor2 = circles[i].get()->body->GetWorldCenter();
