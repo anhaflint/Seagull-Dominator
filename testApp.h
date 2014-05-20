@@ -1,8 +1,13 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxBox2d.h"
-#include "includes.h"
-#include "Module_Mouette\Mouette.h"
+#include <stdio.h>
+#include <time.h>
+#include "Gestion_Jeu\Header\PageJeu.h"
+#include "Gestion_Jeu\Header\Menu_Principale.h"
+#include "Util\Header\Fenetre.h"
+#include "Gestion_Jeu\Header\GestionnairePage.h"
+
 // -------------------------------------------------
 
 class testApp : public ofBaseApp {
@@ -21,23 +26,15 @@ public:
 	void mousePressed(int x, int y, int button);
 	void mouseReleased(int x, int y, int button);
 	void resized(int w, int h);
+
 	
-	ofxBox2d  box2d;			  //	the box2d world
-	ofPtr<Mouette> mouette;
-	ofPtr<Bloc> bloc;
-	ofPtr<Castle> castle1, castle2;
-	ofImage background;
-	bool keyIsDown[4];
+	Affichage *affichage;
+	Fenetre *fenetre;
 
-	vector    <ofPtr<ofxBox2dCircle> >	circles;		//	default box2d circles
-	vector	  <ofPtr<ofxBox2dRect> >	boxes;			  //	defalut box2d rects
-	b2WeldJointDef weldJointDef;
+private:
+	Menu_Principale *menu_principale;
 };
+<<<<<<< HEAD
+=======
 
-
-enum _key{
-	LEFT,
-	UP,
-	RIGHT,
-	DOWN,
-};
+>>>>>>> 9805d3d7a06b3069d51743bbb5a34b6c96d623b5

@@ -3,15 +3,15 @@
 
 class BaseBloc : public Bloc {
 public :
-	BaseBloc(ofxBox2d& box2d, int mouseX, int mouseY);
+	BaseBloc(int mouseX, int mouseY);
 };
 
 class MedBloc : public Bloc {
 public :
-	MedBloc(ofxBox2d& box2d, int mouseX, int mouseY);
+	MedBloc(int mouseX, int mouseY);
 };
 
 class TopBloc : public Bloc {
 public :
-	TopBloc(ofxBox2d& box2d, int mouseX, int mouseY);
+	TopBloc(int mouseX, int mouseY);
 };

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _CASTLE_H
+#define _CASTLE_H
 
 #include "ofMain.h"
 #include "ofxBox2d.h"
@@ -11,12 +12,13 @@ protected :
 	ofPtr<Bloc> med;
 	ofPtr<Bloc> top; 
 	int nbGrains;
-	ofImage sable;
 
 public :
-	Castle(ofxBox2d& box2d, int mouseX, int mouseY);
+	Castle(int mouseX, int mouseY);
 	~Castle() {}
 	virtual void draw();
 	int getNbGrains();
 
 };
+
+#endif
