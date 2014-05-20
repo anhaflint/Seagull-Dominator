@@ -86,9 +86,7 @@ void Menu_Principale::mouseMoved(int x, int y) {
 	if (x<800 && x>500 && y>460 && y<525)
 		select = JOUER;	//Jouer surligné
 	else if (x<800 && x>500 && y>525 && y<590)
-	{
-		select = HIGH_SCORE; 
-	}
+		select = HIGH_SCORE;
 	else if (x<800 && x>500 && y>590 && y < 660)
 		select = QUITTER;
 	else

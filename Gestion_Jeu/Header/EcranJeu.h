@@ -5,7 +5,6 @@
 #include "Module_Joueur/header/Joueur.h"
 #include "Gestion_Jeu\Header\Menu_ameliorations.h"
 
-
 class EcranJeu : public PageJeu
 {
 private:

@@ -15,8 +15,6 @@ EcranJeu::~EcranJeu()
 
 //--------------------------------------------------------------
 void EcranJeu::update() {
-	printf("Constructeur decran jeu\n");
-
 	if (init){
 		//creer la classe joueur + dedans score a 0
 		//Initialiser liste chateau + en créer aléatoirement
@@ -83,7 +81,6 @@ void EcranJeu::draw() {
 	info += "Fleches directionelles pour deplacer la mouette\n";
 	info += "Appuyer sur [m] pour creer une mouette simple\n";
 	info += "Appuyer sur [a] pour acceder au menu des ameliorations de la mouette\n";
-
 	info += "Total Bodies: " + ofToString(GestionnairePage::box2d.getBodyCount()) + "\n";
 	info += "Total Joints: " + ofToString(GestionnairePage::box2d.getJointCount()) + "\n\n";
 	info += "FPS: " + ofToString(ofGetFrameRate(), 1) + "\n";
@@ -120,7 +117,7 @@ void EcranJeu::keyPressed(int key) {
 				 if (player != NULL){
 					 GestionnairePage::EmpilerPage(new Menu_ameliorations(player.get()));
 				 }
-		break;
+				 break;
 	}
 		/*
 		mouette = ofPtr<Mouette>(new Mouette(box2d));

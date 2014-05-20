@@ -1,6 +1,7 @@
 #include <iostream>
-#include "Util/Header/Affichage.h"
+#include "Util\Header\Affichage.h"
 #include "ofxBox2d.h"
+#include "Util/Header/functions.h"
 
 using namespace std;
 
@@ -9,6 +10,7 @@ Affichage *Affichage::m_instance = NULL;				//Initialisation à null du ptr d'ins
 Affichage::Affichage()	//Constructeur appelé par instance une seule et unique fois
 {
 	this->demarrage_neutre = new ofImage;
+<<<<<<< HEAD
 	this->demarrage_neutre->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/Ecran_demarrage_neutre.png");
 	this->demarrage_jouer = new ofImage;
 	this->demarrage_jouer->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/Ecran_demarrage_jouer.png");
@@ -49,7 +51,6 @@ Affichage* Affichage::Instance()				//Creation et renvoi de l'instance quand cel
 	{
 		m_instance = new Affichage();
 	}
-	
 	return m_instance;
 }
 

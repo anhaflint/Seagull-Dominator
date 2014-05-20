@@ -30,5 +30,4 @@ public :
 	void setForceMouette(int);
 	void setTailleCorde(int);
 	void setTailleBoulet(int);
-
 };

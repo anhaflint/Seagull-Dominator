@@ -27,6 +27,7 @@ private:
 	ofImage *demarrage_jouer;				//Ecran de demarrage avec jouer en surbrillance
 	ofImage *demarrage_highscore;
 	ofImage *demarrage_quitter;
+
 	ofImage *corde_plus;
 	ofImage *corde_moins;
 	ofImage *mouette_plus;
@@ -35,6 +36,7 @@ private:
 	ofImage *boulet_moins;
 	ofImage *confirmer;
 	ofImage *amelioration_aucun;
+
 	ofImage *background;					//Fond durant jeu
 	ofImage *texture_grains;				//Texture des grains
 
