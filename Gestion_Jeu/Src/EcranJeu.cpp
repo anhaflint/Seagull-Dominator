@@ -33,16 +33,16 @@ void EcranJeu::update() {
 		init = false;
 	}
 
-	if (keyIsDown[UP] && keyIsDown[LEFT]) {
+	if (keyIsDown[UP] && keyIsDown[LEFT] && player) {
 		player->diagmoveup(-10, 0);
 	}
-	if (keyIsDown[UP] && keyIsDown[RIGHT]) {
+	if (keyIsDown[UP] && keyIsDown[RIGHT] && player) {
 		player->diagmoveup(+10, 0);
 	}
-	if (keyIsDown[DOWN] && keyIsDown[LEFT]) {
+	if (keyIsDown[DOWN] && keyIsDown[LEFT] && player) {
 		player->diagmovedown(-10, 0);
 	}
-	if (keyIsDown[DOWN] && keyIsDown[RIGHT]) {
+	if (keyIsDown[DOWN] && keyIsDown[RIGHT] && player) {
 		player->diagmovedown(+10, 0);
 	}
 
@@ -67,7 +67,7 @@ void EcranJeu::draw() {
 	if (mouette != NULL)
 		mouette->draw();
 
-	if (player != NULL) {
+	if (player) {
 		player->draw();
 	}
 
@@ -91,25 +91,27 @@ void EcranJeu::keyPressed(int key) {
 		keyIsDown[key - 356] = true;
 	}
 
-	switch (key) {
-	case OF_KEY_DOWN:
-		player->move(0, 10);
-		break;
-	case OF_KEY_UP:
-		player->move(0, -10);
-		break;
-	case OF_KEY_LEFT:
-		player->move(-10, 0);
-		break;
-	case OF_KEY_RIGHT:
-		player->move(+10, 0);
-		break;
-	case 'm':
-		mouette = ofPtr<Mouette>(new Mouette(GestionnairePage::box2d));
-		break;
-	case 'k':
-		player = ofPtr<Joueur>(new Joueur(GestionnairePage::box2d));
-		
+
+		switch (key) {
+		case OF_KEY_DOWN:
+			player->move(0, 10);
+			break;
+		case OF_KEY_UP:
+			player->move(0, -10);
+			break;
+		case OF_KEY_LEFT:
+			player->move(-10, 0);
+			break;
+		case OF_KEY_RIGHT:
+			player->move(+10, 0);
+			break;
+		case 'm':
+			mouette = ofPtr<Mouette>(new Mouette(GestionnairePage::box2d));
+			break;
+		case 'k':
+			player = ofPtr<Joueur>(new Joueur(GestionnairePage::box2d));
+	
+	}
 		/*
 		mouette = ofPtr<Mouette>(new Mouette(box2d));
 		vecBegin = new b2Vec2(mouette->getPositionX() + mouette->radius, mouette->getPositionY());
@@ -134,7 +136,6 @@ void EcranJeu::keyPressed(int key) {
 		rope.at(0)->joinEnd(boulet->body);
 		}
 		*/
-	}
 }
 //--------------------------------------------------------------
 void EcranJeu::keyReleased(int key) {

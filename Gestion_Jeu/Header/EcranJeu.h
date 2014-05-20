@@ -13,6 +13,7 @@ private:
 	Fenetre *fenetre;
 	ofPtr<Castle> tabCastle[3];
 	ofPtr<Joueur> player;
+	
 	//vector    <ofPtr<ofxBox2dCircle> >	circles;		//	default box2d circles
 	//vector	  <ofPtr<ofxBox2dRect> >	boxes;			  //	default box2d rects
 public:
