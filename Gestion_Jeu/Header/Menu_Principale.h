@@ -2,11 +2,13 @@
 #include "PageJeu.h"
 #include "EcranJeu.h"
 #include "GestionnairePage.h"
+#include "Util/Header/functions.h"
 
 class Menu_Principale :	public PageJeu{
 
 private:
-
+	bool init = true;
+	ofVideoPlayer myPlayer;
 	enum Surligner{
 		AUCUN,
 		JOUER,
