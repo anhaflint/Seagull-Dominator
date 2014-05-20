@@ -10,6 +10,20 @@ Joueur::Joueur(ofxBox2d& box2d) {
 	rope->joinBegin(mouette->getBody()->body);
 }
 
+
+void Joueur::move(float x, float y) {
+	mouette->move(x, y);
+}
+
+
+void Joueur::diagmovedown(float x, float y) {
+	mouette->diagmovedown(x, y);
+}
+
+void Joueur::diagmoveup(float x, float y) {
+	mouette->diagmoveup(x, y);
+}
+
 void Joueur::draw() {
 	if (mouette != NULL)
 		mouette->draw();

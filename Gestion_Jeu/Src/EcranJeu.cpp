@@ -34,16 +34,16 @@ void EcranJeu::update() {
 	}
 
 	if (keyIsDown[UP] && keyIsDown[LEFT]) {
-		mouette->diagmoveup(-10, 0);
+		player->diagmoveup(-10, 0);
 	}
 	if (keyIsDown[UP] && keyIsDown[RIGHT]) {
-		mouette->diagmoveup(+10, 0);
+		player->diagmoveup(+10, 0);
 	}
 	if (keyIsDown[DOWN] && keyIsDown[LEFT]) {
-		mouette->diagmovedown(-10, 0);
+		player->diagmovedown(-10, 0);
 	}
 	if (keyIsDown[DOWN] && keyIsDown[RIGHT]) {
-		mouette->diagmovedown(+10, 0);
+		player->diagmovedown(+10, 0);
 	}
 
 	GestionnairePage::box2d.update();
@@ -93,16 +93,16 @@ void EcranJeu::keyPressed(int key) {
 
 	switch (key) {
 	case OF_KEY_DOWN:
-		mouette->move(0, 10);
+		player->move(0, 10);
 		break;
 	case OF_KEY_UP:
-		mouette->move(0, -10);
+		player->move(0, -10);
 		break;
 	case OF_KEY_LEFT:
-		mouette->move(-10, 0);
+		player->move(-10, 0);
 		break;
 	case OF_KEY_RIGHT:
-		mouette->move(+10, 0);
+		player->move(+10, 0);
 		break;
 	case 'm':
 		mouette = ofPtr<Mouette>(new Mouette(GestionnairePage::box2d));
