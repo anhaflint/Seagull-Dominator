@@ -36,3 +36,27 @@ void Joueur::draw() {
 
 Joueur::~Joueur() {
 }
+
+int Joueur::getForceMouette(){
+	b2MassData *data = new b2MassData();
+	mouette->getBody()->body->GetMassData(data);
+	return (int) data->mass;
+}
+
+int Joueur::getTailleCorde(){
+	return rope->getLongueur();
+}
+
+int Joueur::getTailleBoulet(){
+	return rope->getTailleBoulet();
+}
+
+void Joueur::setForceMouette(int v){
+	mouette->getBody()->setDensity((float)v);
+}
+void Joueur::setTailleCorde(int v){
+	rope->grow(v-rope->getLongueur());
+}
+void Joueur::setTailleBoulet(int v){
+	rope->setTailleBoulet((float)v);
+}

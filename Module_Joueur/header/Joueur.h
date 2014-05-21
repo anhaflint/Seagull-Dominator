@@ -23,4 +23,13 @@ public :
 	void diagmovedown(float, float);
 	void diagmoveup(float x, float y);
 
+	inline ofPtr<Mouette> getMouette(){ return mouette; }
+
+	int getForceMouette();
+	int getTailleCorde();
+	int getTailleBoulet();
+
+	void setForceMouette(int);
+	void setTailleCorde(int);
+	void setTailleBoulet(int);
 };
