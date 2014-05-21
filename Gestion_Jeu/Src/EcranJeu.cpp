@@ -27,6 +27,7 @@ void EcranJeu::update() {
 		//player->getMouette()->getBody()->body->
 	}
 	*/
+<<<<<<< HEAD
 	jeu->maybeNewChateau();
 	if (player != NULL){
 		if (keyIsDown[UP] && keyIsDown[LEFT]) {
@@ -78,7 +79,6 @@ void EcranJeu::keyPressed(int key) {
 	if (key >= 356 && key <= 359) {
 		keyIsDown[key - 356] = true;
 	}
-
 	switch (key) {
 	case OF_KEY_DOWN:
 		player->move(0, 10);
@@ -99,7 +99,7 @@ void EcranJeu::keyPressed(int key) {
 		*/
 		/*
 	case 'k':
-		
+		player = ofPtr<Joueur>(new Joueur(GestionnairePage::box2d));
 		break;
 		*/
 	case 'a':
@@ -107,6 +107,7 @@ void EcranJeu::keyPressed(int key) {
 			 GestionnairePage::EmpilerPage(new Menu_ameliorations(player.get()));
 		 }
 		 break;
+
 	
 
 		/*

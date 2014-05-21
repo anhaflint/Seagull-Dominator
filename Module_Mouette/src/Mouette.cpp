@@ -4,7 +4,7 @@
 
 Mouette::Mouette(ofxBox2d& box2d) {
 	this->mouette = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
-	mouette->setPhysics(20, 0.0f, 0.5);
+	mouette->setPhysics(90, 0.0f, 0.5);
 	mouette->setup(box2d.getWorld(), 400, 400, 20);
 	mouette->body->SetGravityScale(0);
 	this->mouette->bodyDef.type = b2_staticBody;
