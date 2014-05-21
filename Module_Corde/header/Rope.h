@@ -11,7 +11,7 @@ private:
 	int length; // Sa longueur
 	ofxBox2dCircle *ptrBoulet;
 	ofxBox2d* box2d; // Un pointeur vers le 'jeu'. On en a besoin pour recuperer le World dans certaines fonctions
-	const float radius = 5.0f; // La largeur
+	const float radius = 2.5f; // La largeur
 	//const float h = 5.0f; // L'hauteur
 
 	// Constantes
@@ -22,7 +22,7 @@ private:
 	const float densityBoulet = 20.0;
 	const float bouncingBoulet = 0.1;
 	const float frictionBoulet = 5.0;
-	float tailleBoulet = 40.0f;
+	float tailleBoulet = 20.0f;
 public:
 
 

@@ -11,6 +11,7 @@ void testApp::setup() {
 
 	Menu_Principale *menu_principale = new Menu_Principale();
 	GestionnairePage::EmpilerPage(menu_principale);
+
 //--------------------------------------------------------------------------------------
 //Initilisation de la fenetre et de l'affichage
 //--------------------------------------------------------------------------------------	
@@ -31,6 +32,7 @@ void testApp::setup() {
 	GestionnairePage::box2d.setIterations(8, 3);
 	GestionnairePage::box2d.registerGrabbing();
 	GestionnairePage::box2d.ground;
+
 }
 
 //--------------------------------------------------------------

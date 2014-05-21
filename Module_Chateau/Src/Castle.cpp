@@ -5,8 +5,8 @@
 
 Castle::Castle(int mouseX, int mouseY) {
 	base = ofPtr<Bloc>(new BaseBloc(mouseX, mouseY));
-	med = ofPtr<Bloc>(new MedBloc(mouseX + 8*Grains::size, mouseY - 10*Grains::size ));
-	top = ofPtr<Bloc>(new TopBloc(mouseX + 12*Grains::size, mouseY - 17*Grains::size));
+	med = ofPtr<Bloc>(new MedBloc(mouseX + 4*Grains::size, mouseY - 5*Grains::size ));
+	top = ofPtr<Bloc>(new TopBloc(mouseX + 6*Grains::size, mouseY - 8*Grains::size));
 }
 
 void Castle::draw() {
@@ -19,4 +19,7 @@ void Castle::draw() {
 
 int Castle::getNbGrains() {
 	return (base->getNbGrains() + med->getNbGrains() + top->getNbGrains());
+}
+
+Castle::~Castle(){
 }

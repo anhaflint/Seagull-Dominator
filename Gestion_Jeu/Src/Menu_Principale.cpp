@@ -5,12 +5,13 @@ Menu_Principale::Menu_Principale()
 {
 	select = AUCUN;
 	fenetre = new Fenetre();
-	ecranjeu = new EcranJeu();
+//	ecranjeu = new EcranJeu();
 }
 
 
 Menu_Principale::~Menu_Principale()
 {
+	delete ecranjeu;
 }
 
 
@@ -64,7 +65,7 @@ void Menu_Principale::keyPressed(int key) {
 
 
 		if (key == ' ' && select == JOUER){
-			GestionnairePage::EmpilerPage(new EcranJeu());
+			GestionnairePage::EmpilerPage(ecranjeu = new EcranJeu());
 		}
 
 		else if (key == ' ' && select == QUITTER){

@@ -15,10 +15,3 @@ public :
 	void fall();
 	void winter();
 };
-
-enum state_{
-	SPRING,
-	SUMMER,
-	FALL,
-	WINTER
-};

@@ -2,7 +2,6 @@
 
 
 Grains::Grains() : ofxBox2dRect() {
-	cout << "constructeur par defaut" << endl;
 }
 
 Grains::Grains(ofVec2f position)

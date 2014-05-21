@@ -6,6 +6,7 @@ EcranJeu::EcranJeu() : PageJeu()
 	jeu = ofPtr<Jeu>(new Jeu());
 	fenetre = new Fenetre();
 	player = ofPtr<Joueur>(new Joueur(GestionnairePage::box2d));
+	jeu->initJeu();
 }
 
 
@@ -16,6 +17,9 @@ EcranJeu::~EcranJeu()
 
 //--------------------------------------------------------------
 void EcranJeu::update() {
+	if (jeu->over()){
+		GestionnairePage::DepilerPage();
+	}
 	/*
 	if (player != NULL)
 	{
@@ -23,13 +27,7 @@ void EcranJeu::update() {
 		//player->getMouette()->getBody()->body->
 	}
 	*/
-	if (init){
-		//creer la classe joueur + dedans score a 0
-		//Initialiser liste chateau + en créer aléatoirement
-		jeu->initJeu();
-		init = false;
-	}
-
+	jeu->maybeNewChateau();
 	if (player != NULL){
 		if (keyIsDown[UP] && keyIsDown[LEFT]) {
 			player->diagmoveup(-10, 0);
@@ -54,10 +52,9 @@ void EcranJeu::draw() {
 
 	string info = "";
 
-	//ofSetColor(255, 255, 255);	//Image claire
+	ofSetColor(255, 255, 255);	//Image claire
 
 	this->fenetre->aff_fenetre(BACKGROUND, 1280, 720);
-
 
 	jeu->drawChateau();
 

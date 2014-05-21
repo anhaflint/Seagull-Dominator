@@ -1,15 +1,22 @@
 #include "Gestion_Jeu/header/Jeu.h"
 
 
-Jeu::Jeu() :score(0), point(0), years(0), over(false) {
-
+Jeu::Jeu() :score(0), point(0), season(SPRING),year(0) {
+	
 }
 
-void Jeu::Game() {
-	while (!over)
-	{
-		years.push_back(ofPtr<Year>(new Year()));
+bool Jeu::over() {
+	bool Over = true;
+	int emplacement_vide = 0;
+	for (int i = 0; i < EMPLACEMENT_CHATEAU && Over==true; i++){
+		if (tabCastle[i] == NULL){
+			emplacement_vide++;
+			if (emplacement_vide > EMPLACEMENT_CHATEAU/2){
+				Over = false;
+			}
+		}
 	}
+	return Over;
 }
 
 Jeu::~Jeu() {
@@ -33,7 +40,7 @@ void Jeu::initJeu(){
 		while (tabCastle[rand] != NULL){
 			rand = ofRandom(0, EMPLACEMENT_CHATEAU - 1);
 		}
-		tabCastle[rand] = ofPtr<Castle>(new Castle(rand * 320, 720));
+		tabCastle[rand] = ofPtr<Castle>(new Castle(rand * 160, 720));
 	}
 }
 
@@ -43,4 +50,25 @@ void Jeu::drawChateau(){
 			tabCastle[i]->draw();
 	}
 
+}
+
+void Jeu::maybeNewChateau(){
+
+
+
+	if (ofGetElapsedTimef() - time > getCastleApparitionTime()){
+		time += 10;
+
+		int rand = ofRandom(0, EMPLACEMENT_CHATEAU - 1);
+		for (int i = 0; i < 2; i++){
+			while (tabCastle[rand] != NULL){
+				rand = ofRandom(0, EMPLACEMENT_CHATEAU - 1);
+			}
+			tabCastle[rand] = ofPtr<Castle>(new Castle(rand * 160, 720));
+		}
+	}
+}
+
+int Jeu::getCastleApparitionTime(){
+	return (10 - year - season*0.5);
 }

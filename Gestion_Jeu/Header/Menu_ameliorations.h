@@ -2,6 +2,7 @@
 #include "PageJeu.h"
 #include "EcranJeu.h"
 #include "GestionnairePage.h"
+#include "Util/header/functions.h"
 
 class Menu_ameliorations : public PageJeu
 {

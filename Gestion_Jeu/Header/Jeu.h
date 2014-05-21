@@ -1,28 +1,33 @@
 #pragma once
 
 #include "../example-Simple/src/Module_Chateau/Header/Castle.h"
-#include"Year.h"
 
-
-#define EMPLACEMENT_CHATEAU 4
+#define EMPLACEMENT_CHATEAU 8
 
 class Jeu
 {
 private:
-	ofPtr<Castle> tabCastle[3];
+	int season;
+	ofPtr<Castle> tabCastle[EMPLACEMENT_CHATEAU];
 	float time;
-	bool over; // true si le jeu est fini
 	int score;
 	int point;
-	//get display current time OF
-	vector<ofPtr<Year>> years;
+	int year;
 	
 public:
+	int getCastleApparitionTime();
+	void maybeNewChateau();
 	void drawChateau();
 	void initJeu();
-	inline int getYearNumber() { return years.size(); }
+	inline int getYearNumber() { return year; }
 	Jeu();
 	~Jeu();
-	void Game();
+	bool over();
 };
 
+enum seasons{
+	SPRING,
+	SUMMER,
+	FALL,
+	WINTER
+};

@@ -12,7 +12,6 @@ private:
 	ofPtr<Jeu> jeu;
 	ofPtr<Mouette> mouette;	//A suppr
 	bool keyIsDown[4];
-	bool init=true;
 	Fenetre *fenetre;
 	//vector    <ofPtr<ofxBox2dCircle> >	circles;		//	default box2d circles
 	//vector	  <ofPtr<ofxBox2dRect> >	boxes;			  //	default box2d rects
