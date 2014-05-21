@@ -1,6 +1,6 @@
 #include "Module_Chateau\Header\Castle.h"
 #include "Module_Chateau\Header\SubBlocs.h"
-#include "Util\functions.h"
+#include "Util\Header\functions.h"
 
 
 Castle::Castle(int mouseX, int mouseY) {

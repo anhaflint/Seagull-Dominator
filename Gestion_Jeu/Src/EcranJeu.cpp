@@ -39,19 +39,20 @@ void EcranJeu::update() {
 		init = false;
 	}
 
-	if (keyIsDown[UP] && keyIsDown[LEFT]) {
-		player->diagmoveup(-10, 0);
+	if (player != NULL){
+		if (keyIsDown[UP] && keyIsDown[LEFT]) {
+			player->diagmoveup(-10, 0);
+		}
+		if (keyIsDown[UP] && keyIsDown[RIGHT]) {
+			player->diagmoveup(+10, 0);
+		}
+		if (keyIsDown[DOWN] && keyIsDown[LEFT]) {
+			player->diagmovedown(-10, 0);
+		}
+		if (keyIsDown[DOWN] && keyIsDown[RIGHT]) {
+			player->diagmovedown(+10, 0);
+		}
 	}
-	if (keyIsDown[UP] && keyIsDown[RIGHT]) {
-		player->diagmoveup(+10, 0);
-	}
-	if (keyIsDown[DOWN] && keyIsDown[LEFT]) {
-		player->diagmovedown(-10, 0);
-	}
-	if (keyIsDown[DOWN] && keyIsDown[RIGHT]) {
-		player->diagmovedown(+10, 0);
-	}
-
 	GestionnairePage::box2d.update();
 	//Utiliser la fonction de disparition ici
 }
@@ -59,6 +60,7 @@ void EcranJeu::update() {
 
 //--------------------------------------------------------------
 void EcranJeu::draw() {
+
 	string info = "";
 
 	ofSetColor(255, 255, 255);	//Image claire
@@ -81,9 +83,10 @@ void EcranJeu::draw() {
 	// draw the ground
 	GestionnairePage::box2d.drawGround();
 
-
-	info += "Press [c] for circles\n";
-	info += "Press [b] for blocks\n";
+	info += "Appuyer sur [k] pour creer une mouette avec une corde et un boulet\n";
+	info += "Fleches directionelles pour deplacer la mouette\n";
+	info += "Appuyer sur [m] pour creer une mouette simple\n";
+	info += "Appuyer sur [a] pour acceder au menu des ameliorations de la mouette\n";
 	info += "Total Bodies: " + ofToString(GestionnairePage::box2d.getBodyCount()) + "\n";
 	info += "Total Joints: " + ofToString(GestionnairePage::box2d.getJointCount()) + "\n\n";
 	info += "FPS: " + ofToString(ofGetFrameRate(), 1) + "\n";
@@ -115,8 +118,18 @@ void EcranJeu::keyPressed(int key) {
 		break;
 	case 'k':
 		player = ofPtr<Joueur>(new Joueur(GestionnairePage::box2d));
+<<<<<<< HEAD
 		
 		
+=======
+		break;
+	case 'a':{
+				 if (player != NULL){
+					 GestionnairePage::EmpilerPage(new Menu_ameliorations(player.get()));
+				 }
+				 break;
+	}
+>>>>>>> 152bef05089f79a8e8913ff3250e03ef20fb91f5
 		/*
 		mouette = ofPtr<Mouette>(new Mouette(box2d));
 		vecBegin = new b2Vec2(mouette->getPositionX() + mouette->radius, mouette->getPositionY());

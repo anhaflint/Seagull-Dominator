@@ -3,6 +3,7 @@
 #include "Module_Chateau\Header\Castle.h"
 #include "GestionnairePage.h"
 #include "Module_Joueur/header/Joueur.h"
+#include "Gestion_Jeu\Header\Menu_ameliorations.h"
 
 class EcranJeu : public PageJeu
 {
@@ -12,7 +13,6 @@ private:
 	bool init=true;
 	Fenetre *fenetre;
 	ofPtr<Castle> tabCastle[3];
-	ofPtr<Joueur> player;
 	//vector    <ofPtr<ofxBox2dCircle> >	circles;		//	default box2d circles
 	//vector	  <ofPtr<ofxBox2dRect> >	boxes;			  //	default box2d rects
 public:
@@ -28,6 +28,9 @@ public:
 	virtual void mousePressed(int x, int y, int button);
 	virtual void mouseReleased(int x, int y, int button);
 	virtual void resized(int w, int h);
+
+	ofPtr<Joueur> player;
+
 };
 
 enum _key{
