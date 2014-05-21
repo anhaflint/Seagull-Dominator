@@ -8,7 +8,7 @@ class Jeu
 {
 private:
 	int season;
-	ofPtr<Castle> tabCastle[EMPLACEMENT_CHATEAU];
+	
 	float time;
 	int score;
 	int point;
@@ -22,6 +22,7 @@ public:
 	inline int getYearNumber() { return year; }
 	Jeu();
 	~Jeu();
+	ofPtr<Castle> tabCastle[EMPLACEMENT_CHATEAU];
 	bool over();
 };
 
