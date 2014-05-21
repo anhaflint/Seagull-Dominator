@@ -22,7 +22,7 @@ Rope::Rope(b2Vec2* pos, int length, ofxBox2d* box2d) : length(length), box2d(box
 	
 
 	circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
-	circles.back().get()->setPhysics(2, 0.1, 5);
+	circles.back().get()->setPhysics(70, 0.1, 5);
 	circles.back().get()->setup(box2d->getWorld(), pos->x, pos->y, 0.1f);
 	circles.back().get()->fixture.filter.groupIndex = -5;
 	pos->y -= 0.1f;
