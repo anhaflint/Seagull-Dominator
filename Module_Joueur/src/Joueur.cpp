@@ -19,8 +19,10 @@ void Joueur::move(float x, float y) {
 
 
 void Joueur::destroy() {
-	rope->destroy();
-	mouette->destroy();
+	if (rope && mouette) {
+		rope->destroy();
+		mouette->destroy();
+	}
 }
 
 void Joueur::diagmovedown(float x, float y) {
