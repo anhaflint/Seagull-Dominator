@@ -17,6 +17,7 @@ EcranJeu::~EcranJeu()
 
 //--------------------------------------------------------------
 void EcranJeu::update() {
+	
 	if (jeu->over()){
 		GestionnairePage::DepilerPage();
 	}
@@ -27,7 +28,6 @@ void EcranJeu::update() {
 		//player->getMouette()->getBody()->body->
 	}
 	*/
-
 	jeu->maybeNewChateau();
 	if (player != NULL){
 		if (keyIsDown[UP] && keyIsDown[LEFT]) {

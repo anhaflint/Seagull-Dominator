@@ -7,18 +7,9 @@
 class Menu_ameliorations : public PageJeu
 {
 private:
-	enum Surligner{
-		CORDE_PLUS,
-		CORDE_MOINS,
-		BOULET_PLUS,
-		BOULET_MOINS,
-		MOUETTE_PLUS,
-		MOUETTE_MOINS,
-		CONFIRMER,
-		AMELIORATION_AUCUN
-	};
+	
 	Fenetre *fenetre;
-	Surligner select;
+	IMG select;
 	ofTrueTypeFont fontBoulet;
 	ofTrueTypeFont fontMouette;
 	ofTrueTypeFont fontCorde;

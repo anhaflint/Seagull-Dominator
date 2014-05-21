@@ -11,7 +11,7 @@ bool Jeu::over() {
 	for (int i = 0; i < EMPLACEMENT_CHATEAU && Over==true; i++){
 		if (tabCastle[i] == NULL){
 			emplacement_vide++;
-			if (emplacement_vide > EMPLACEMENT_CHATEAU/2){
+			if (emplacement_vide > 2){	//Divise par 2 EMPLACEMENT_CHATEAU 
 				Over = false;
 			}
 		}
