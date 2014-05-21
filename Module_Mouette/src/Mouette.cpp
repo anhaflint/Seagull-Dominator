@@ -44,3 +44,6 @@ float Mouette::getPositionY(){
 	return mouette->getPosition().y;
 }
 
+void Mouette::destroy() {
+	mouette->destroy();
+}

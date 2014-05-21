@@ -14,7 +14,7 @@ public :
 	void move(float, float);
 	void diagmovedown(float, float);
 	void diagmoveup(float x, float y);
-
+	void destroy();
 	static const int radius = 40;
 	float getPositionX();
 	float getPositionY();

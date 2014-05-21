@@ -39,4 +39,5 @@ public:
 	inline int getLongueur(){ return length; }
 	inline int getTailleBoulet(){ return (int)tailleBoulet; }
 	void setTailleBoulet(float);
+	void destroy();
 };
