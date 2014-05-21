@@ -10,7 +10,6 @@ Affichage *Affichage::m_instance = NULL;				//Initialisation à null du ptr d'ins
 Affichage::Affichage()	//Constructeur appelé par instance une seule et unique fois
 {
 	this->demarrage_neutre = new ofImage;
-<<<<<<< HEAD
 	this->demarrage_neutre->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/Ecran_demarrage_neutre.png");
 	this->demarrage_jouer = new ofImage;
 	this->demarrage_jouer->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/Ecran_demarrage_jouer.png");
