@@ -26,6 +26,11 @@ void Bloc::draw() {
 	}
 }
 
+void Bloc::destroy() {
+	for (ofPtr<Grains> g : grains) {
+		g->destroy();
+	}
+}
 
 Bloc::~Bloc() {
 	grains.clear();

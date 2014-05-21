@@ -27,7 +27,7 @@ void EcranJeu::update() {
 		//player->getMouette()->getBody()->body->
 	}
 	*/
-<<<<<<< HEAD
+
 	jeu->maybeNewChateau();
 	if (player != NULL){
 		if (keyIsDown[UP] && keyIsDown[LEFT]) {

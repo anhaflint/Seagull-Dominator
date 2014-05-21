@@ -21,5 +21,11 @@ int Castle::getNbGrains() {
 	return (base->getNbGrains() + med->getNbGrains() + top->getNbGrains());
 }
 
+void Castle::destroy() {
+	med->destroy();
+	base->destroy();
+	top->destroy();
+}
+
 Castle::~Castle(){
 }

@@ -18,7 +18,7 @@ public :
 	~Castle();
 	virtual void draw();
 	int getNbGrains();
-
+	void destroy();
 };
 
 #endif
