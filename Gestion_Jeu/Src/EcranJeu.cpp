@@ -4,6 +4,7 @@
 #define EMPLACEMENT_CHATEAU 4
 EcranJeu::EcranJeu() : PageJeu()
 {
+//	camera = ofPtr<ofEasyCam>(new ofEasyCam());
 	fenetre = new Fenetre();
 }
 
@@ -15,6 +16,11 @@ EcranJeu::~EcranJeu()
 
 //--------------------------------------------------------------
 void EcranJeu::update() {
+	if (player != NULL)
+	{
+
+		//player->getMouette()->getBody()->body->
+	}
 	if (init){
 		//creer la classe joueur + dedans score a 0
 		//Initialiser liste chateau + en créer aléatoirement
@@ -109,6 +115,7 @@ void EcranJeu::keyPressed(int key) {
 		break;
 	case 'k':
 		player = ofPtr<Joueur>(new Joueur(GestionnairePage::box2d));
+		
 		
 		/*
 		mouette = ofPtr<Mouette>(new Mouette(box2d));
