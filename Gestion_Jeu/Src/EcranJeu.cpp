@@ -20,6 +20,12 @@ void EcranJeu::update() {
 	
 	if (jeu->over()){
 		GestionnairePage::DepilerPage();
+		for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
+			if (jeu->tabCastle[i]!=NULL)
+				jeu->tabCastle[i]->destroy();
+		}
+		if (player != NULL)
+			player->destroy();
 	}
 	/*
 	if (player != NULL)
