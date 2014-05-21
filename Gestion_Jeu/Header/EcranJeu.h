@@ -4,18 +4,21 @@
 #include "GestionnairePage.h"
 #include "Module_Joueur/header/Joueur.h"
 #include "Gestion_Jeu\Header\Menu_ameliorations.h"
+#include "Gestion_Jeu\Header\Jeu.h"
 
 class EcranJeu : public PageJeu
 {
 private:
+	ofPtr<Jeu> jeu;
 	ofPtr<Mouette> mouette;	//A suppr
 	bool keyIsDown[4];
 	bool init=true;
 	Fenetre *fenetre;
-	ofPtr<Castle> tabCastle[3];
 	//vector    <ofPtr<ofxBox2dCircle> >	circles;		//	default box2d circles
 	//vector	  <ofPtr<ofxBox2dRect> >	boxes;			  //	default box2d rects
 public:
+	
+	inline ofPtr<Joueur> getPlayer(){ return player; }
 	EcranJeu();
 	~EcranJeu();
 	virtual void update();

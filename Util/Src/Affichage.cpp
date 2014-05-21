@@ -10,34 +10,33 @@ Affichage *Affichage::m_instance = NULL;				//Initialisation à null du ptr d'ins
 Affichage::Affichage()	//Constructeur appelé par instance une seule et unique fois
 {
 	this->demarrage_neutre = new ofImage;
-<<<<<<< HEAD
-	this->demarrage_neutre->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/Ecran_demarrage_neutre.png");
+	this->demarrage_neutre->loadImage(getAbsolutePath("Ecran_demarrage_neutre.png"));
 	this->demarrage_jouer = new ofImage;
-	this->demarrage_jouer->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/Ecran_demarrage_jouer.png");
+	this->demarrage_jouer->loadImage(getAbsolutePath("Ecran_demarrage_jouer.png"));
 	this->background = new ofImage;
-	this->background->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/background.gif");
+	this->background->loadImage(getAbsolutePath("background.gif"));
 	this->texture_grains = new ofImage;
-	this->texture_grains->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/sable.gif");
+	this->texture_grains->loadImage(getAbsolutePath("sable.gif"));
 	this->demarrage_highscore = new ofImage;
-	this->demarrage_highscore->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/Ecran_demarrage_highscore.png");
+	this->demarrage_highscore->loadImage(getAbsolutePath("Ecran_demarrage_highscore.png"));
 	this->demarrage_quitter = new ofImage;
-	this->demarrage_quitter->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/Ecran_demarrage_quitter.png");
+	this->demarrage_quitter->loadImage(getAbsolutePath("Ecran_demarrage_quitter.png"));
 	this->corde_plus = new ofImage;
-	this->corde_plus->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/amelioration_corde_plus.png");
+	this->corde_plus->loadImage(getAbsolutePath("amelioration_corde_plus.png"));
 	this->corde_moins = new ofImage;
-	this->corde_moins->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/amelioration_corde_moins.png");
+	this->corde_moins->loadImage(getAbsolutePath("amelioration_corde_moins.png"));
 	this->mouette_plus = new ofImage;
-	this->mouette_plus->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/amelioration_mouette_plus.png");
+	this->mouette_plus->loadImage(getAbsolutePath("amelioration_mouette_plus.png"));
 	this->mouette_moins = new ofImage;
-	this->mouette_moins->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/amelioration_mouette_moins.png");
+	this->mouette_moins->loadImage(getAbsolutePath("amelioration_mouette_moins.png"));
 	this->boulet_plus = new ofImage;
-	this->boulet_plus->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/amelioration_boulet_plus.png");
+	this->boulet_plus->loadImage(getAbsolutePath("amelioration_boulet_plus.png"));
 	this->boulet_moins = new ofImage;
-	this->boulet_moins->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/amelioration_boulet_moins.png");
+	this->boulet_moins->loadImage(getAbsolutePath("amelioration_boulet_moins.png"));
 	this->confirmer = new ofImage;
-	this->confirmer->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/amelioration_ok.png");
+	this->confirmer->loadImage(getAbsolutePath("amelioration_ok.png"));
 	this->amelioration_aucun = new ofImage;
-	this->amelioration_aucun->loadImage("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/Img/amelioration_aucun.png");
+	this->amelioration_aucun->loadImage(getAbsolutePath("amelioration_aucun.png"));
 
 }
 

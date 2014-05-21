@@ -22,9 +22,8 @@ public :
 	void move(float, float);
 	void diagmovedown(float, float);
 	void diagmoveup(float x, float y);
-<<<<<<< HEAD
+
 	inline ofPtr<Mouette> getMouette(){ return mouette; }
-=======
 
 	int getForceMouette();
 	int getTailleCorde();
@@ -33,5 +32,4 @@ public :
 	void setForceMouette(int);
 	void setTailleCorde(int);
 	void setTailleBoulet(int);
->>>>>>> 152bef05089f79a8e8913ff3250e03ef20fb91f5
 };
