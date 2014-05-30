@@ -4,7 +4,7 @@
 //Faire une boucle simple qui appel toujours les mêmes fonctions, celles-ci avec pointeurs des fonctions changent ce qu'elles font en fonction de l'endroit du programme
 //--------------------------------------------------------------
 void testApp::setup() {
-
+	ofSetEscapeQuitsApp(false);
 //--------------------------------------------------------------------------------------
 //On empile une page de menu principale dans la pile de page
 //--------------------------------------------------------------------------------------

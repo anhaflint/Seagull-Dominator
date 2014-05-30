@@ -8,6 +8,7 @@ Mouette::Mouette(ofxBox2d& box2d) {
 	mouette->setPhysics(90, 0.0f, 0.5);
 	mouette->setup(box2d.getWorld(), 400, 400, 20);
 	//mouette->body->SetGravityScale(0);
+	mouette->body->SetLinearVelocity(b2Vec2(0, 0));
 	this->mouette->bodyDef.type = b2_staticBody;
 	spriteMouette = MOUETTE_D0;
 }
@@ -22,12 +23,12 @@ void Mouette::move(float x, float y) {
 
 
 void Mouette::diagmovedown(float x, float y) {
-	mouette->setPosition(ofVec2f(mouette->getPosition().x, mouette->getPosition().y + 6));
+	mouette->setPosition(ofVec2f(mouette->getPosition().x, mouette->getPosition().y + 1));
 	this->move(x, y);
 }
 
 void Mouette::diagmoveup(float x, float y) {
-	mouette->setPosition(ofVec2f(mouette->getPosition().x, mouette->getPosition().y - 6));
+	mouette->setPosition(ofVec2f(mouette->getPosition().x, mouette->getPosition().y - 1));
 	this->move(x, y);
 	
 }

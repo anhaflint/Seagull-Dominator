@@ -1,5 +1,6 @@
 #include "Gestion_Jeu\Header\EcranJeu.h"
 #define VITESSE 5
+#define V_DIAG 5
 EcranJeu::EcranJeu() : PageJeu()
 {
 //	camera = ofPtr<ofEasyCam>(new ofEasyCam());
@@ -35,16 +36,20 @@ void EcranJeu::update() {
 	jeu->maybeNewChateau();
 	if (player != NULL){
 		if (keyIsDown[UP] && keyIsDown[LEFT]) {
-			player->diagmoveup(-VITESSE, 0);
+			//player->diagmoveup(-VITESSE, 0);
+			player->move(-V_DIAG, -V_DIAG);
 		}
 		if (keyIsDown[UP] && keyIsDown[RIGHT]) {
-			player->diagmoveup(+VITESSE, 0);
+			//player->diagmoveup(+VITESSE, 0);
+			player->move(+V_DIAG, -V_DIAG);
 		}
 		if (keyIsDown[DOWN] && keyIsDown[LEFT]) {
-			player->diagmovedown(-VITESSE, 0);
+			//player->diagmovedown(-VITESSE, 0);
+			player->move(-V_DIAG, +V_DIAG);
 		}
 		if (keyIsDown[DOWN] && keyIsDown[RIGHT]) {
-			player->diagmovedown(+VITESSE, 0);
+			//player->diagmovedown(+VITESSE, 0);
+			player->move(+V_DIAG, +V_DIAG);
 		}
 	}
 	b2Vec2 lower;

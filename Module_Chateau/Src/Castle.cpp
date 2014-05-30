@@ -22,9 +22,11 @@ int Castle::getNbGrains() {
 }
 
 void Castle::destroy() {
-	med->destroy();
-	base->destroy();
-	top->destroy();
+	if (med != NULL && base != NULL && top != NULL) {
+		med->destroy();
+		base->destroy();
+		top->destroy();
+	}
 }
 
 Castle::~Castle(){
