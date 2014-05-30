@@ -3,6 +3,8 @@
 
 Jeu::Jeu() :score(0), point(0), season(SPRING),year(0) {
 	printf("sfs");
+	prevCallBack = new ScoreCounter();
+	currentCallBack = new ScoreCounter();
 	for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
 		DownPos[i] = ofPtr<b2Vec2>(new b2Vec2(i * 160, 720));
 		printf("nttf\n");
@@ -50,17 +52,17 @@ void Jeu::initJeu(){
 
 void Jeu::drawChateau(){
 	for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
-		printf("bouya");
+		//printf("bouya");
 		b2Vec2 lower(min(DownPos[i]->x, UpPos[i]->x), min(DownPos[i]->y, UpPos[i]->y));
 		b2Vec2 upper(max(DownPos[i]->x, UpPos[i]->x), max(DownPos[i]->y, UpPos[i]->y));
 		if (tabCastle[i] != NULL)
 			tabCastle[i]->draw();
-		printf("fgylvbhj\n");
+		//printf("fgylvbhj\n");
 		lower.x = 0+i*160;
 		lower.y = 720;
 		upper.x = 100+i*160;
 		upper.y = 620;
-		printf("fvkh\n");
+		//printf("fvkh\n");
 		glColor3f(1, 1, 1);//white
 		glBegin(GL_LINE_LOOP);
 		glVertex2f(lower.x, lower.y);
@@ -68,23 +70,24 @@ void Jeu::drawChateau(){
 		glVertex2f(upper.x, upper.y);
 		glVertex2f(lower.x, upper.y);
 		glEnd();
-
+		
 		if (currentCallBack != NULL){
 			prevCallBack = currentCallBack;
 		}
-
-		ScoreCounter* current;
+		
+		ScoreCounter* current = new ScoreCounter();
 		b2AABB aabb;
 		aabb.lowerBound = lower;
 		aabb.upperBound = upper;
 		GestionnairePage::box2d.getWorld()->QueryAABB(current, aabb);
-
+		
 		currentCallBack = current;
-
-		if (currentCallBack->getSize() < prevCallBack->getSize()){
-			score += prevCallBack->getSize() - currentCallBack->getSize();
+		
+		if (currentCallBack->getSize() <= prevCallBack->getSize() && tabCastle[0] != NULL){
+			score += i*tabCastle[0]->getNbGrains() - currentCallBack->getSize();
 			std::cout << "Score : " << score << std::endl;
 		}
+		
 	}
 	
 

@@ -16,8 +16,8 @@ char* getAbsolutePath(char* file) {
 		}
 	}
 	//printf("\ntaille de la chaine : %d\n", strlen(cwd));
-	strcat(cwd, "/Img/");
-	strcat(cwd, file);
+	strcat_s(cwd, "/Img/");
+	strcat_s(cwd, file);
 	cwd[strlen(cwd) + 1] = '\0';
 	//printf("Current working dir after parsing: %s\n", cwd);
 	return cwd;

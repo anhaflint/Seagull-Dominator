@@ -34,5 +34,4 @@ void Bloc::destroy() {
 }
 
 Bloc::~Bloc() {
-	grains.clear();
 }
