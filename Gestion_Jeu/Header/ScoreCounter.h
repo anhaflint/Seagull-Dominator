@@ -14,4 +14,8 @@ public :
 		foundBodies.push_back(fixture->GetBody());
 		return true;
 	};
+	
+	int getSize(){
+		return foundBodies.size;
+	}
 };

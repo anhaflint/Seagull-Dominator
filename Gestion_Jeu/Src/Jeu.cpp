@@ -68,7 +68,23 @@ void Jeu::drawChateau(){
 		glVertex2f(upper.x, upper.y);
 		glVertex2f(lower.x, upper.y);
 		glEnd();
-	
+
+		if (currentCallBack != NULL){
+			prevCallBack = currentCallBack;
+		}
+
+		ScoreCounter* current;
+		b2AABB aabb;
+		aabb.lowerBound = lower;
+		aabb.upperBound = upper;
+		GestionnairePage::box2d.getWorld->QueryAABB(&current, aabb);
+
+		currentCallBack = current;
+
+		if (currentCallBack->getSize() < prevCallBack->getSize()){
+			score += prevCallBack->getSize() - currentCallBack->getSize();
+			std::cout << "Score : " << score << std::endl;
+		}
 	}
 	
 

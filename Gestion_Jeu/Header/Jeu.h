@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../example-Simple/src/Module_Chateau/Header/Castle.h"
+#include "ScoreCounter.h"
 
 #define EMPLACEMENT_CHATEAU 8
 
@@ -14,6 +15,9 @@ private:
 	int point;
 	int year;
 	ofPtr<b2Vec2> DownPos[EMPLACEMENT_CHATEAU], UpPos[EMPLACEMENT_CHATEAU];
+
+	ScoreCounter* prevCallBack;
+	ScoreCounter* currentCallBack;
 
 public:
 	int getCastleApparitionTime();
@@ -32,15 +36,4 @@ enum seasons{
 	SUMMER,
 	FALL,
 	WINTER
-};
-
-
-class MyQueryCallback : public b2QueryCallback {
-public:
-	std::vector<b2Body*> foundBodies;
-
-	bool ReportFixture(b2Fixture* fixture) {
-		foundBodies.push_back(fixture->GetBody());
-		return true;//keep going to find all fixtures in the query area
-	}
 };
