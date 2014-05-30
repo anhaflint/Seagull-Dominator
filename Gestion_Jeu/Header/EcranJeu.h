@@ -5,6 +5,7 @@
 #include "Module_Joueur/header/Joueur.h"
 #include "Gestion_Jeu\Header\Menu_ameliorations.h"
 #include "Gestion_Jeu\Header\Jeu.h"
+#include "ScoreCounter.h"
 
 class EcranJeu : public PageJeu
 {
@@ -31,7 +32,7 @@ public:
 	virtual void mouseReleased(int x, int y, int button);
 	virtual void resized(int w, int h);
 
-	ofPtr<Joueur> player;
+	ofPtr<Joueur> player;	
 
 };
 

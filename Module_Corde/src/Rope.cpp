@@ -139,7 +139,7 @@ void Rope::draw(){
 
 
 void Rope::destroy() {
-	if (circles.back()) {
+	if (circles.front() != NULL) {
 		for (ofPtr<ofxBox2dCircle> c : circles) {
 			c->destroy();
 		}
