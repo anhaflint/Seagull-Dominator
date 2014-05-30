@@ -13,7 +13,8 @@ private:
 	int score;
 	int point;
 	int year;
-	
+	ofPtr<b2Vec2> DownPos[EMPLACEMENT_CHATEAU], UpPos[EMPLACEMENT_CHATEAU];
+
 public:
 	int getCastleApparitionTime();
 	void maybeNewChateau();
@@ -31,4 +32,15 @@ enum seasons{
 	SUMMER,
 	FALL,
 	WINTER
+};
+
+
+class MyQueryCallback : public b2QueryCallback {
+public:
+	std::vector<b2Body*> foundBodies;
+
+	bool ReportFixture(b2Fixture* fixture) {
+		foundBodies.push_back(fixture->GetBody());
+		return true;//keep going to find all fixtures in the query area
+	}
 };

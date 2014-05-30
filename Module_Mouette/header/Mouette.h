@@ -2,12 +2,14 @@
 #include "ofmain.h"
 #include "ofxbox2d.h"
 #include "Module_Chateau/Header/ObjetPhysique.h"
+#include "Util/Header/Affichage.h"
 
 class Mouette : public ObjetPhysique {
-private :
+private:
+	Affichage *affichage;
+	unsigned int spriteMouette;
 	int resistance;
 	ofPtr<ofxBox2dCircle> mouette;
-	unsigned int moveState;
 public : 
 	Mouette(ofxBox2d&);
 	~Mouette();

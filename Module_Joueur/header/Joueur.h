@@ -7,7 +7,6 @@
 #include "Module_Corde/header/Rope.h"
 
 
-
 class Joueur {
 private :
 	string name;

@@ -17,15 +17,19 @@ EcranJeu::~EcranJeu()
 
 //--------------------------------------------------------------
 void EcranJeu::update() {
-	
 	if (jeu->over()){
 		GestionnairePage::DepilerPage();
 		for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
-			if (jeu->tabCastle[i]!=NULL)
+			if (jeu->tabCastle[i] != NULL){
+				printf("destruction du chateau %d \n", i);
 				jeu->tabCastle[i]->destroy();
+			}
 		}
-		if (player != NULL)
+		if (player != NULL){
+			printf("destruction player ?");
 			player->destroy();
+			printf("destruction done\n");
+		}
 	}
 	/*
 	if (player != NULL)
@@ -48,6 +52,19 @@ void EcranJeu::update() {
 		if (keyIsDown[DOWN] && keyIsDown[RIGHT]) {
 			player->diagmovedown(+10, 0);
 		}
+	}
+	b2Vec2 lower;
+	b2Vec2 upper;
+	MyQueryCallback queryCallback;
+	b2AABB aabb;
+	for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
+		lower.x = 0 + i * 160;
+		lower.y = 720;
+		upper.x = 100 + i * 160;
+		upper.y = 620;
+		aabb.lowerBound = lower;
+		aabb.upperBound = upper;
+//		GestionnairePage::box2d.QueryAABB(&queryCallback, aabb);
 	}
 	GestionnairePage::box2d.update();
 	//Utiliser la fonction de disparition ici

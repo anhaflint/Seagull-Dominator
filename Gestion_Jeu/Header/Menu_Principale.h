@@ -7,6 +7,8 @@
 class Menu_Principale :	public PageJeu{
 
 private:
+	int intro=INTRO_0000;
+	bool intro_fini=false;
 	EcranJeu *ecranjeu;
 	bool init = true;
 	ofVideoPlayer myPlayer;

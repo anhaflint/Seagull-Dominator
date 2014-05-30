@@ -3,6 +3,7 @@
 /* Constructeur */
 Rope::Rope(b2Vec2* pos, int length, ofxBox2d* box2d) : length(length), box2d(box2d)
 {
+	affichage = Affichage::Instance();
 	int i;
 	/* Crees les morceaux de la corde */
 	for (i = 0; i < length; i++){
@@ -117,13 +118,15 @@ void Rope::setPosition(b2Vec2* pos){
 void Rope::draw(){
 	/* On dessine les morceaux */
 	for (int i = 0; i < length+1; i++) {
-		if (i <= length) {
+		if (i < length) {
 			ofSetColor(90, 60, 17);
 			circles[i].get()->draw(); 
 		}
 		else {
-			ofSetColor(48, 48, 48);
-			circles[length + 1].get()->draw();
+			ofSetColor(255, 255, 255);	//Image claire
+			this->affichage->aff_img((IMG)BOULET, (int)circles[length + 1].get()->getPosition().x - tailleBoulet, (int)circles[length + 1].get()->getPosition().y - tailleBoulet, tailleBoulet*2, tailleBoulet*2);
+			//ofSetColor(48, 48, 48);
+			//circles[length + 1].get()->draw();
 		}
 	}
 

@@ -2,10 +2,12 @@
 #include "ofMain.h"
 #include "ofxBox2d.h"
 #include "../../Joints/ofxBox2dDistanceJoint.h"
+#include "Util\Header\Affichage.h"
 
 class Rope
 {
 private:
+	Affichage *affichage;
 	vector<ofPtr<ofxBox2dCircle>> circles; // Le corps de la corde
 	vector<ofPtr<ofxBox2dDistanceJoint>> joints; // Les jointures entre chaque morceaux de la corde
 	int length; // Sa longueur
