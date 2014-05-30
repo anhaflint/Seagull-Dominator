@@ -49,7 +49,7 @@ void EcranJeu::update() {
 	}
 	b2Vec2 lower;
 	b2Vec2 upper;
-	MyQueryCallback queryCallback;
+	ScoreCounter queryCallback;
 	b2AABB aabb;
 	for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
 		lower.x = 0 + i * 160;
@@ -58,7 +58,7 @@ void EcranJeu::update() {
 		upper.y = 620;
 		aabb.lowerBound = lower;
 		aabb.upperBound = upper;
-//		GestionnairePage::box2d.QueryAABB(&queryCallback, aabb);
+		GestionnairePage::box2d.getWorld()->QueryAABB(&queryCallback, aabb);
 	}
 	GestionnairePage::box2d.update();
 }
