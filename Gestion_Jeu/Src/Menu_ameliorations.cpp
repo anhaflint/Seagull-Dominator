@@ -1,15 +1,16 @@
 #include "Gestion_Jeu\Header\Menu_ameliorations.h"
 
 
+
 Menu_ameliorations::Menu_ameliorations(Joueur* joueur) : joueur(joueur)
 {
 	select = AMELIORATION_AUCUN;
 	fenetre = new Fenetre();
-
-	fontBoulet.loadFont("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/BebasNeue.otf", 40);
-	fontMouette.loadFont("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/BebasNeue.otf", 40);
-	fontCorde.loadFont("C:/Users/Utilisateur/Documents/Mes docs/openFrameworks-VS2013/addons/ofxBox2d/example-Simple/src/BebasNeue.otf", 40);
-
+	
+	fontBoulet.loadFont(getAbsolutePath("BebasNeue.otf"), 40);
+	fontMouette.loadFont(getAbsolutePath("BebasNeue.otf"), 40);
+	fontCorde.loadFont(getAbsolutePath("BebasNeue.otf"), 40);
+	
 	compteurBoulet = joueur->getTailleBoulet();
 	compteurCorde = joueur->getTailleCorde();
 	compteurMouette = joueur->getForceMouette();
@@ -34,11 +35,11 @@ void Menu_ameliorations::draw() {
 	string infoBoulet = to_string(compteurBoulet);
 	string infoMouette = to_string(compteurMouette);
 	string infoCorde = to_string(compteurCorde);
-
+	
 	fontBoulet.drawString(infoBoulet, 1043+80, 221+45);
 	fontMouette.drawString(infoMouette, 1043+80, 366+45);
 	fontCorde.drawString(infoCorde, 1042+80, 90+45);
-
+	
 
 }
 

@@ -7,8 +7,8 @@
 class GestionnairePage
 {
 public:
-	static inline void EmpilerPage(PageJeu *pagejeu){ PilePage.push(pagejeu); printf("Nombre de page dans la pile = %d pages \n", PilePage.size()); }
-	static inline void DepilerPage(){ PilePage.pop(); }
+	static inline void EmpilerPage(PageJeu *pagejeu){ PilePage.push(pagejeu); printf("Nombre de pages dans la pile = %d pages \n", PilePage.size()); }
+	static inline void DepilerPage(){ PilePage.pop(); printf("Nombre de pages dans la pile = %d pages \n", PilePage.size()); }
 	static inline PageJeu* PageCourante(){ return PilePage.top(); }
 
 	static ofxBox2d box2d;			  //	the box2d world

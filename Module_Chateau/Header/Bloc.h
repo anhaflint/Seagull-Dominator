@@ -22,6 +22,7 @@ public :
 	virtual void draw();
 	inline int getLength() { return this->length; }
 	inline int getHeight() { return this->height; }
+	void destroy();
 	~Bloc();
 };
 

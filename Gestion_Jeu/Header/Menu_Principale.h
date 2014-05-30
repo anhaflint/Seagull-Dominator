@@ -7,6 +7,9 @@
 class Menu_Principale :	public PageJeu{
 
 private:
+	int intro=INTRO_0000;
+	bool intro_fini=false;
+	EcranJeu *ecranjeu;
 	bool init = true;
 	ofVideoPlayer myPlayer;
 	enum Surligner{
@@ -17,7 +20,6 @@ private:
 	};
 	Fenetre *fenetre;
 	Surligner select;
-	EcranJeu *ecranjeu;
 public:
 	Menu_Principale();
 	~Menu_Principale();

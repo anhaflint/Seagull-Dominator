@@ -7,7 +7,6 @@
 #include "Module_Corde/header/Rope.h"
 
 
-
 class Joueur {
 private :
 	string name;
@@ -22,6 +21,8 @@ public :
 	void move(float, float);
 	void diagmovedown(float, float);
 	void diagmoveup(float x, float y);
+	void destroy();
+	inline ofPtr<Mouette> getMouette(){ return mouette; }
 
 	int getForceMouette();
 	int getTailleCorde();

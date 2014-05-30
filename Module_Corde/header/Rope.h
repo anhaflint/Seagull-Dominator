@@ -2,16 +2,18 @@
 #include "ofMain.h"
 #include "ofxBox2d.h"
 #include "../../Joints/ofxBox2dDistanceJoint.h"
+#include "Util\Header\Affichage.h"
 
 class Rope
 {
 private:
+	Affichage *affichage;
 	vector<ofPtr<ofxBox2dCircle>> circles; // Le corps de la corde
 	vector<ofPtr<ofxBox2dDistanceJoint>> joints; // Les jointures entre chaque morceaux de la corde
 	int length; // Sa longueur
 	ofxBox2dCircle *ptrBoulet;
 	ofxBox2d* box2d; // Un pointeur vers le 'jeu'. On en a besoin pour recuperer le World dans certaines fonctions
-	const float radius = 5.0f; // La largeur
+	const float radius = 2.5f; // La largeur
 	//const float h = 5.0f; // L'hauteur
 
 	// Constantes
@@ -22,7 +24,7 @@ private:
 	const float densityBoulet = 20.0;
 	const float bouncingBoulet = 0.1;
 	const float frictionBoulet = 5.0;
-	float tailleBoulet = 40.0f;
+	float tailleBoulet = 20.0f;
 public:
 
 
@@ -39,4 +41,5 @@ public:
 	inline int getLongueur(){ return length; }
 	inline int getTailleBoulet(){ return (int)tailleBoulet; }
 	void setTailleBoulet(float);
+	void destroy();
 };

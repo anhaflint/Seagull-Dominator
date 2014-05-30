@@ -13,7 +13,7 @@ protected:
 	ofVec2f prec;
 	ofVec2f current;	
 public:
-	static const int size = 10;
+	static const int size = 5;
 	Grains();
 	Grains(ofVec2f); // Modifié le type de Position vers ofVec2f
 	int deplacement(ofVec2f courant, ofVec2f precedent); // Modifié le type de position vers ofVec2f

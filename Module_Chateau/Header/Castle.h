@@ -15,10 +15,10 @@ protected :
 
 public :
 	Castle(int mouseX, int mouseY);
-	~Castle() {}
+	~Castle();
 	virtual void draw();
 	int getNbGrains();
-
+	void destroy();
 };
 
 #endif

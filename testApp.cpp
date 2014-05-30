@@ -11,6 +11,7 @@ void testApp::setup() {
 
 	Menu_Principale *menu_principale = new Menu_Principale();
 	GestionnairePage::EmpilerPage(menu_principale);
+
 //--------------------------------------------------------------------------------------
 //Initilisation de la fenetre et de l'affichage
 //--------------------------------------------------------------------------------------	
@@ -24,9 +25,9 @@ void testApp::setup() {
 
 	ofSetVerticalSync(true);
 	ofSetLogLevel(OF_LOG_NOTICE);
-	
 	GestionnairePage::box2d.init();
 	GestionnairePage::box2d.setGravity(0, 10);		//modifier x pour le vent
+	//GestionnairePage::box2d.createBounds(-500,0,2500, 720);
 	GestionnairePage::box2d.createBounds();
 	GestionnairePage::box2d.setFPS(60.0);
 	GestionnairePage::box2d.setIterations(8, 3);

@@ -3,6 +3,7 @@
 /* Constructeur */
 Rope::Rope(b2Vec2* pos, int length, ofxBox2d* box2d) : length(length), box2d(box2d)
 {
+	affichage = Affichage::Instance();
 	int i;
 	/* Crees les morceaux de la corde */
 	for (i = 0; i < length; i++){
@@ -23,7 +24,7 @@ Rope::Rope(b2Vec2* pos, int length, ofxBox2d* box2d) : length(length), box2d(box
 	
 
 	circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
-	circles.back().get()->setPhysics(2, 0.1, 5);
+	circles.back().get()->setPhysics(70, 0.1, 5);
 	circles.back().get()->setup(box2d->getWorld(), pos->x, pos->y, 0.1f);
 	circles.back().get()->fixture.filter.groupIndex = -5;
 	pos->y -= 0.1f;
@@ -117,13 +118,15 @@ void Rope::setPosition(b2Vec2* pos){
 void Rope::draw(){
 	/* On dessine les morceaux */
 	for (int i = 0; i < length+1; i++) {
-		if (i <= length) {
+		if (i < length) {
 			ofSetColor(90, 60, 17);
 			circles[i].get()->draw(); 
 		}
 		else {
-			ofSetColor(48, 48, 48);
-			circles[length + 1].get()->draw();
+			ofSetColor(255, 255, 255);	//Image claire
+			this->affichage->aff_img((IMG)BOULET, (int)circles[length + 1].get()->getPosition().x - tailleBoulet, (int)circles[length + 1].get()->getPosition().y - tailleBoulet, tailleBoulet*2, tailleBoulet*2);
+			//ofSetColor(48, 48, 48);
+			//circles[length + 1].get()->draw();
 		}
 	}
 
@@ -135,4 +138,13 @@ void Rope::draw(){
 		joints[i].get()->draw();
 	}
 	
+}
+
+
+void Rope::destroy() {
+	if (circles.front() != NULL) {
+		for (ofPtr<ofxBox2dCircle> c : circles) {
+			c->destroy();
+		}
+	}
 }

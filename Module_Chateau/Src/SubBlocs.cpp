@@ -1,11 +1,10 @@
 #include "Module_Chateau\Header\SubBlocs.h"
 
 BaseBloc::BaseBloc(int mouseX, int mouseY) :
-Bloc(32, 10,mouseX, mouseY) {}
-
+Bloc(16, 5,mouseX, mouseY) {}
 
 MedBloc::MedBloc(int mouseX, int mouseY) :
-Bloc(16, 7,mouseX, mouseY) {}
+Bloc(8, 4,mouseX, mouseY) {}
 
 TopBloc::TopBloc(int mouseX, int mouseY) :
-Bloc(8, 5, mouseX, mouseY) {}
+Bloc(4, 3, mouseX, mouseY) {}
