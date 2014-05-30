@@ -9,6 +9,7 @@ Affichage *Affichage::m_instance = NULL;				//Initialisation à null du ptr d'ins
 
 Affichage::Affichage()	//Constructeur appelé par instance une seule et unique fois
 {
+	printf("Loading files\n");
 	this->demarrage_neutre = new ofImage;
 	this->demarrage_neutre->loadImage(getAbsolutePath("Ecran_demarrage_neutre.png"));
 	this->demarrage_jouer = new ofImage;

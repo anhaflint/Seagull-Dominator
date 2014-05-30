@@ -77,7 +77,7 @@ void Jeu::drawChateau(){
 		b2AABB aabb;
 		aabb.lowerBound = lower;
 		aabb.upperBound = upper;
-		GestionnairePage::box2d.getWorld->QueryAABB(&current, aabb);
+		GestionnairePage::box2d.getWorld()->QueryAABB(current, aabb);
 
 		currentCallBack = current;
 

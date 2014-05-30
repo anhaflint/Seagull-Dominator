@@ -36,19 +36,15 @@ void EcranJeu::update() {
 	jeu->maybeNewChateau();
 	if (player != NULL){
 		if (keyIsDown[UP] && keyIsDown[LEFT]) {
-			//player->diagmoveup(-VITESSE, 0);
 			player->move(-V_DIAG, -V_DIAG);
 		}
 		if (keyIsDown[UP] && keyIsDown[RIGHT]) {
-			//player->diagmoveup(+VITESSE, 0);
 			player->move(+V_DIAG, -V_DIAG);
 		}
 		if (keyIsDown[DOWN] && keyIsDown[LEFT]) {
-			//player->diagmovedown(-VITESSE, 0);
 			player->move(-V_DIAG, +V_DIAG);
 		}
 		if (keyIsDown[DOWN] && keyIsDown[RIGHT]) {
-			//player->diagmovedown(+VITESSE, 0);
 			player->move(+V_DIAG, +V_DIAG);
 		}
 	}

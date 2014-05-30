@@ -25,13 +25,6 @@ void Joueur::destroy() {
 	}
 }
 
-void Joueur::diagmovedown(float x, float y) {
-	mouette->diagmovedown(x, y);
-}
-
-void Joueur::diagmoveup(float x, float y) {
-	mouette->diagmoveup(x, y);
-}
 
 void Joueur::draw() {
 	if (mouette != NULL)

@@ -22,17 +22,6 @@ void Mouette::move(float x, float y) {
 }
 
 
-void Mouette::diagmovedown(float x, float y) {
-	mouette->setPosition(ofVec2f(mouette->getPosition().x, mouette->getPosition().y + 1));
-	this->move(x, y);
-}
-
-void Mouette::diagmoveup(float x, float y) {
-	mouette->setPosition(ofVec2f(mouette->getPosition().x, mouette->getPosition().y - 1));
-	this->move(x, y);
-	
-}
-
 void Mouette::draw() {
 	ofSetColor(255, 255, 255);	//Image claire
 	this->affichage->aff_img((IMG)spriteMouette, (int)mouette.get()->getPosition().x - mouette.get()->getRadius()*2, (int)mouette.get()->getPosition().y - mouette.get()->getRadius()*2, mouette.get()->getRadius() * 3, mouette.get()->getRadius() * 3);

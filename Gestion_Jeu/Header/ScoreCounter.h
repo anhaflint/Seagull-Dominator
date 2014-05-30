@@ -16,6 +16,6 @@ public :
 	};
 	
 	int getSize(){
-		return foundBodies.size;
+		return foundBodies.size();
 	}
 };

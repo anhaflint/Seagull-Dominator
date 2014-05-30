@@ -2,6 +2,7 @@
 using namespace std;
 
 char* getAbsolutePath(char* file) {
+	printf(".");
 	char cwd[2048];
 	if (_getcwd(cwd, sizeof(cwd)) != NULL)
 	{
