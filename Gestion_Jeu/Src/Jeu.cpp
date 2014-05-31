@@ -84,7 +84,8 @@ void Jeu::drawChateau(){
 		currentCallBack = current;
 		
 		if (currentCallBack->getSize() <= prevCallBack->getSize() && tabCastle[0] != NULL){
-			score += i*tabCastle[0]->getNbGrains() - currentCallBack->getSize();
+			if (currentCallBack->getSize() != currentCallBack->getSize())
+				score += i*tabCastle[0]->getNbGrains() - currentCallBack->getSize();
 			std::cout << "Score : " << score << std::endl;
 		}
 		
