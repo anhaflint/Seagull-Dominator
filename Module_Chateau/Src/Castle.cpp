@@ -2,7 +2,11 @@
 #include "Module_Chateau\Header\SubBlocs.h"
 #include "Util\Header\functions.h"
 
-
+/*!
+ * \file Castle.cpp
+ * \brief Classe Castle
+ * \author Claire REMY
+ */
 Castle::Castle(int mouseX, int mouseY) {
 	base = ofPtr<Bloc>(new BaseBloc(mouseX, mouseY));
 	med = ofPtr<Bloc>(new MedBloc(mouseX + 4*Grains::size, mouseY - 5*Grains::size ));
