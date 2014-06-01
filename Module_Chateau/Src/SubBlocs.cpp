@@ -1,5 +1,10 @@
 #include "Module_Chateau\Header\SubBlocs.h"
 
+/*!
+ * \file SubBlocs.cpp
+ * \brief Classes heritant de bloc afin de créer les differents blocs
+ * \author Claire REMY
+ */
 BaseBloc::BaseBloc(int mouseX, int mouseY) :
 Bloc(16, 5,mouseX, mouseY) {}
 
