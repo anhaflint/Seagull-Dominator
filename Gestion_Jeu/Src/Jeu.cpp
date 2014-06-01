@@ -75,18 +75,19 @@ void Jeu::drawChateau(){
 			prevCallBack = currentCallBack;
 		}
 		
-		ScoreCounter* current = new ScoreCounter();
+		ScoreCounter current;
 		b2AABB aabb;
 		aabb.lowerBound = lower;
 		aabb.upperBound = upper;
-		GestionnairePage::box2d.getWorld()->QueryAABB(current, aabb);
+		GestionnairePage::box2d.getWorld()->QueryAABB(&current, aabb);
 		
-		currentCallBack = current;
+		currentCallBack = &current;
 		
 		if (currentCallBack->getSize() <= prevCallBack->getSize() && tabCastle[0] != NULL){
-			if (currentCallBack->getSize() != currentCallBack->getSize())
-				score += i*tabCastle[0]->getNbGrains() - currentCallBack->getSize();
-			std::cout << "Score : " << score << std::endl;
+				score += tabCastle[0]->getNbGrains() - currentCallBack->getSize();
+			//std::cout << "Score : " << score << std::endl;
+			std::cout << "taille current : " << currentCallBack->getSize() << std::endl;
+			std::cout << "taille previous : " << prevCallBack->getSize() << std::endl;
 		}
 		
 	}

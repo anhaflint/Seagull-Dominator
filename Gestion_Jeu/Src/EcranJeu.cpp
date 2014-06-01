@@ -48,6 +48,7 @@ void EcranJeu::update() {
 			player->move(+V_DIAG, +V_DIAG);
 		}
 	}
+	/*
 	b2Vec2 lower;
 	b2Vec2 upper;
 	ScoreCounter queryCallback;
@@ -61,6 +62,7 @@ void EcranJeu::update() {
 		aabb.upperBound = upper;
 		GestionnairePage::box2d.getWorld()->QueryAABB(&queryCallback, aabb);
 	}
+	*/
 	GestionnairePage::box2d.update();
 }
 
