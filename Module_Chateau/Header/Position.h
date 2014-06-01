@@ -1,5 +1,16 @@
 #pragma once 
 
+/*!
+ * \file Position.h
+ * \brief Classe permettant de gérer la position d'un objet
+ * \author Quentin GROS
+ */
+
+/*!
+ * \class Position
+ * \brief Classe permettant de gérer la position d'un objet
+ * Cette classe n'est pas utilisée
+ */
 class Position {
 protected:
 	int x;
