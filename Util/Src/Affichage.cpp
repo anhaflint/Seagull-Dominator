@@ -1,7 +1,14 @@
+/*!
+* \file Affichage.h
+* \brief Classe de gestion de tout l'affichage du jeu
+* \author Quentin GROS, Claire REMY (relecture)
+*/
+
 #include <iostream>
 #include "Util\Header\Affichage.h"
 #include "ofxBox2d.h"
 #include "Util/Header/functions.h"
+
 
 using namespace std;
 
