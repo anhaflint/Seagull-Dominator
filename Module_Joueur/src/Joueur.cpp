@@ -1,7 +1,10 @@
 #include "Module_Joueur/header/Joueur.h"
 
 
-
+/*!
+ * \file Joueur.cpp 
+ * \brief Classe permettant de gerer le joueur et de le creer
+ */
 Joueur::Joueur(ofxBox2d& box2d) {
 	// Allocation de la mouette 
 	mouette = ofPtr<Mouette>(new Mouette(box2d));
