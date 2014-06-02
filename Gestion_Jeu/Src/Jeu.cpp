@@ -7,7 +7,7 @@
 #include "Gestion_Jeu/header/Jeu.h"
 
 
-Jeu::Jeu() :score(0), point(0), season(SPRING),year(0) {
+Jeu::Jeu() :score(0), point(0), season(SUMMER),year(0) {
 	//prevCallBack = new ScoreCounter();
 	//currentCallBack = new ScoreCounter();
 	for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
@@ -106,7 +106,7 @@ bool Jeu::maybeNewYear(){
 		NewChateaux();
 		if (season == WINTER)
 		{
-			season = SPRING;			
+			season = SUMMER;			
 			year++;		
 			return true;
 		}
@@ -117,7 +117,7 @@ bool Jeu::maybeNewYear(){
 
 void Jeu::NewChateaux(){
 	int rand = ofRandom(0, EMPLACEMENT_CHATEAU - 1);
-	for (int i = 0; i < 2; i++){
+	for (int i = 0; i < 1; i++){
 		while (tabCastle[rand] != NULL){
 			rand = ofRandom(0, EMPLACEMENT_CHATEAU - 1);
 		}

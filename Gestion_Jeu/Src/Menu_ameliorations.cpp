@@ -51,6 +51,52 @@ void Menu_ameliorations::draw() {
 
 //--------------------------------------------------------------
 void Menu_ameliorations::keyPressed(int key) {
+	if ((key == OF_KEY_DOWN && select == AMELIORATION_AUCUN) || (key == OF_KEY_UP && select == BOULET_MOINS) || (key == OF_KEY_LEFT && select == CORDE_PLUS)){
+		select = CORDE_MOINS;
+	}
+	else if ((key == OF_KEY_RIGHT && select == CORDE_MOINS) || (key == OF_KEY_UP && select == BOULET_PLUS)){
+		select = CORDE_PLUS;
+	}
+	else if ((key == OF_KEY_DOWN && select == CORDE_MOINS) || (key == OF_KEY_LEFT && select == BOULET_PLUS) || (key == OF_KEY_UP && select == MOUETTE_MOINS)){
+		select = BOULET_MOINS;
+	}
+	else if ((key == OF_KEY_DOWN && select == CORDE_PLUS) || (key == OF_KEY_RIGHT && select == BOULET_MOINS) || (key == OF_KEY_UP && select == MOUETTE_PLUS)){
+		select = BOULET_PLUS;
+	}
+	else if ((key == OF_KEY_DOWN && select == BOULET_MOINS) || (key == OF_KEY_LEFT && select == MOUETTE_PLUS)){
+		select = MOUETTE_MOINS;
+	}
+	else if ((key == OF_KEY_DOWN && select == BOULET_PLUS) || (key == OF_KEY_RIGHT && select == MOUETTE_MOINS) || (key == OF_KEY_UP && select == CONFIRMER)) {
+		select = MOUETTE_PLUS;
+	}
+	else if (key == OF_KEY_DOWN && (select == MOUETTE_MOINS ||select == MOUETTE_PLUS)){
+		select = CONFIRMER;
+	}
+
+	if (select == CORDE_PLUS && key == ' '){
+		compteurCorde++;
+	}
+	else if (select == CORDE_MOINS && key == ' '){
+		compteurCorde--;
+	}
+	else if (select == BOULET_PLUS && key == ' '){
+		compteurBoulet++;
+	}
+	else if (select == BOULET_MOINS && key == ' '){
+		compteurBoulet--;
+	}
+	else if (select == MOUETTE_PLUS && key == ' '){
+		compteurMouette++;
+	}
+	else if (select == MOUETTE_MOINS && key == ' '){
+		compteurMouette--;
+	}
+	else if (select == CONFIRMER && key == ' '){
+		joueur->setForceMouette(compteurMouette);
+		joueur->setTailleBoulet(compteurBoulet);
+		joueur->setTailleCorde(compteurCorde);
+		GestionnairePage::DepilerPage();
+	}
 }
 
 //--------------------------------------------------------------
@@ -59,32 +105,7 @@ void Menu_ameliorations::keyReleased(int key) {
 
 //--------------------------------------------------------------
 void Menu_ameliorations::mouseMoved(int x, int y) {
-	printf("x : %d ", x);
-	printf("y : %d\n", y);
-	if (y<(91 + 50) && y>91 && x > 242 && x<(242 + 50)){
-		select = CORDE_MOINS;
-	}
-	else if (y<(90 + 50) && y>90 && x>1043 && x<(1043 + 50)){
-		select = CORDE_PLUS;
-	}
-	else if (y<(231 + 50) && y>231 && x>239 && x<(239 + 50)){
-		select = BOULET_MOINS;
-	}
-	else if (y<(221 + 50) && y>221 && x>1043 && x<(1043 + 50)){
-		select = BOULET_PLUS;
-	}
-	else if (y<(366 + 50) && y>366 && x>242 && x<(242 + 50)){
-		select = MOUETTE_MOINS;
-	}
-	else if (y<(366 + 50) && y>366 && x>1042 && x<(1042 + 50)){
-		select = MOUETTE_PLUS;
-	}
-	else if (y<(611 + 50) && y>611 && x>549 && x < (549 + 200)){
-		select = CONFIRMER;
-	}
-	else{
-	select = AMELIORATION_AUCUN;	//Neutre
-	}
+
 }
 
 //--------------------------------------------------------------

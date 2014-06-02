@@ -23,7 +23,7 @@ void testApp::setup() {
 	ofSetLogLevel(OF_LOG_NOTICE);
 	GestionnairePage::box2d.init();
 	GestionnairePage::box2d.setGravity(0, 10);		
-	GestionnairePage::box2d.createBounds(-500,0,2500, 720);
+	GestionnairePage::box2d.createBounds();
 	GestionnairePage::box2d.setFPS(60.0);
 	GestionnairePage::box2d.setIterations(8, 3);
 	GestionnairePage::box2d.registerGrabbing();
