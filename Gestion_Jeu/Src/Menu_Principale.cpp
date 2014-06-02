@@ -1,3 +1,9 @@
+/*!
+* \file Menu_Principale.h
+* \brief Classe de gestion du menu principal
+* \author Quentin GROS, Mounia HAMEDI (relecture)
+*/
+
 #include "Gestion_Jeu\Header\Menu_Principale.h"
 
 
