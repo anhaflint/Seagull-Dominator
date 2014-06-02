@@ -12,6 +12,8 @@
 #include "Gestion_Jeu\Header\Menu_ameliorations.h"
 #include "Gestion_Jeu\Header\Jeu.h"
 #include "ScoreCounter.h"
+#include "Menu_pause.h"
+#include "Util/Header/EnumImg.h"
 
 
 /*!

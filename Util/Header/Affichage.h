@@ -73,6 +73,10 @@ private:
 
 	ofImage *boulet; /*!< Image du boulet */
 
+	ofImage *pause_neutre;
+	ofImage *pause_reprendre;
+	ofImage *pause_quitter;
+
 	ofImage *mouette_d0;/*!< Sprite mouette */
 	ofImage *mouette_d1;/*!< Sprite mouette */
 	ofImage *mouette_d2;/*!< Sprite mouette */

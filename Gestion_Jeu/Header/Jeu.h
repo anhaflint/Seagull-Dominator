@@ -29,14 +29,14 @@ private:
 
 public:
 	/*!
-	 * \brief Fonction permettant d'acceder au temps separant l'apparition des chateaux
-     */
-	int getCastleApparitionTime();
+	 * \brief Fonction d'incrementation du temps et d'incrementation des saisons et annees
+	 */
+	bool maybeNewYear();
 
 	/*!
 	 * \brief Fonction permettant de decider si un nouveau chateau peut etre affiche a l'ecran
 	 */
-	void maybeNewChateau();
+	void NewChateau();
 
 	/*!
 	 * \brief Fonction permettant de dessiner un chateau a l'ecran

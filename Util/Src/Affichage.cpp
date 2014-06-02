@@ -47,6 +47,16 @@ Affichage::Affichage()	//Constructeur appelé par instance une seule et unique fo
 	this->amelioration_aucun->loadImage(getAbsolutePath("amelioration_aucun.png"));
 	this->boulet = new ofImage;
 	this->boulet->loadImage(getAbsolutePath("boulet.png"));
+
+	this->pause_neutre = new ofImage;
+	this->pause_neutre->loadImage(getAbsolutePath("Pause_neutre.png"));
+	
+	this->pause_reprendre = new ofImage;
+	this->pause_reprendre->loadImage(getAbsolutePath("Pause_reprendre.png"));
+
+	this->pause_quitter = new ofImage;
+	this->pause_quitter->loadImage(getAbsolutePath("Pause_quitter.png"));
+
 	this->mouette_d0 = new ofImage;
 	this->mouette_d0->loadImage(getAbsolutePath("sprite_mouette/Mouette_D0.png"));
 	this->mouette_d1 = new ofImage;
@@ -544,6 +554,18 @@ void Affichage::aff_img(IMG img, int x, int y, int largeur, int hauteur)
 
 	case BOULET:
 		this->boulet->draw(x, y, largeur, hauteur);
+		break;
+
+	case PAUSE_NEUTRE:
+		this->pause_neutre->draw(x, y, largeur, hauteur);
+		break;
+
+	case PAUSE_REPRENDRE:
+		this->pause_reprendre->draw(x, y, largeur, hauteur);
+		break;
+
+	case PAUSE_QUITTER:
+		this->pause_quitter->draw(x, y, largeur, hauteur);
 		break;
 
 	case MOUETTE_D0:

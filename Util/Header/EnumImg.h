@@ -1,5 +1,6 @@
 #pragma once
 
+
 /*!
  * \file EnumImg.h
  * \author Quentin GROS, Claire REMY (relecture)

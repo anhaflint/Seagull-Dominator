@@ -29,18 +29,18 @@ void EcranJeu::update() {
 		GestionnairePage::DepilerPage();
 		for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
 			if (jeu->tabCastle[i] != NULL){
-				printf("destruction du chateau %d \n", i);
 				jeu->tabCastle[i]->destroy();
 			}
 		}
 		if (player != NULL){
-			printf("destruction player ?");
 			player->destroy();
-			printf("destruction done\n");
 		}
 	}
 	
-	jeu->maybeNewChateau();
+	if (jeu->maybeNewYear()){
+		GestionnairePage::EmpilerPage(new Menu_ameliorations(player.get()));
+	}
+
 	if (player != NULL){
 		if (keyIsDown[UP] && keyIsDown[LEFT]) {
 			player->move(-V_DIAG, -V_DIAG);
@@ -115,10 +115,8 @@ void EcranJeu::keyPressed(int key) {
 	case OF_KEY_RIGHT:
 		player->move(+VITESSE, 0);
 		break;
-	case 'a':
-		if (player != NULL){
-			GestionnairePage::EmpilerPage(new Menu_ameliorations(player.get()));
-		}
+	case 27 :	//'escape'
+			GestionnairePage::EmpilerPage(new Menu_pause());		
 		break;
 	}
 }

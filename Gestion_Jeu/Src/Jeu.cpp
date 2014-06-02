@@ -8,12 +8,16 @@
 
 
 Jeu::Jeu() :score(0), point(0), season(SPRING),year(0) {
+<<<<<<< HEAD
 	printf("sfs");
 //	prevCallBack = new ScoreCounter();
 	//currentCallBack = new ScoreCounter();
+=======
+	prevCallBack = new ScoreCounter();
+	currentCallBack = new ScoreCounter();
+>>>>>>> c2623f62a862c782984b6b0ef22761da9b8d7eff
 	for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
 		DownPos[i] = ofPtr<b2Vec2>(new b2Vec2(i * 160, 720));
-		printf("nttf\n");
 	}
 }
 
@@ -36,8 +40,15 @@ Jeu::~Jeu() {
 }
 
 void Jeu::initJeu(){
+<<<<<<< HEAD
 	//Initialisation du temps de jeu
 	time = ofGetElapsedTimef();
+=======
+	
+/*----------------------------------------------Initialisation du temps de jeu------------------------------------------------------*/
+
+	time = 0;
+>>>>>>> c2623f62a862c782984b6b0ef22761da9b8d7eff
 
 	//Initialisation du score
 	score = 0;
@@ -98,23 +109,31 @@ void Jeu::drawChateau(){
 
 }
 
-void Jeu::maybeNewChateau(){
-
-
-
-	if (ofGetElapsedTimef() - time > getCastleApparitionTime()){
-		time += 10;
-
-		int rand = ofRandom(0, EMPLACEMENT_CHATEAU - 1);
-		for (int i = 0; i < 2; i++){
-			while (tabCastle[rand] != NULL){
-				rand = ofRandom(0, EMPLACEMENT_CHATEAU - 1);
-			}
-			tabCastle[rand] = ofPtr<Castle>(new Castle(18+rand * 160, 720));
+bool Jeu::maybeNewYear(){
+	time++;
+	if (time == 500)
+	{
+		time = 0;
+		NewChateaux();
+		if (season == WINTER)
+		{
+			season = SPRING;			
+			year++;		
+			return true;
 		}
+		season++;
+	}
+	return false;
+}
+
+void Jeu::NewChateaux(){
+	int rand = ofRandom(0, EMPLACEMENT_CHATEAU - 1);
+	for (int i = 0; i < 2; i++){
+		while (tabCastle[rand] != NULL){
+			rand = ofRandom(0, EMPLACEMENT_CHATEAU - 1);
+		}
+		tabCastle[rand] = ofPtr<Castle>(new Castle(18+rand * 160, 720));
 	}
 }
 
-int Jeu::getCastleApparitionTime(){
-	return (10 - year - season*0.5);
-}
+

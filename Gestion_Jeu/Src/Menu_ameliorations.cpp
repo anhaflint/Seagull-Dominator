@@ -29,7 +29,7 @@ Menu_ameliorations::~Menu_ameliorations()
 
 //--------------------------------------------------------------
 void Menu_ameliorations::update() {
-	GestionnairePage::box2d.update();
+	//GestionnairePage::box2d.update();
 }
 
 
