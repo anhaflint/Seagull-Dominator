@@ -11,6 +11,10 @@
 
 #define EMPLACEMENT_CHATEAU 8 /*!< Nombre de chateaux dans une page de jeu */
 
+/*!
+ * \class Jeu
+ * \brief Gestion du jeu 
+ */
 class Jeu
 {
 private:

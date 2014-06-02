@@ -2,7 +2,7 @@
 
 /*!
  * \file Rope.h
- * \brief Classe représentant la corde et le boulet
+ * \brief Classe reprsentant la corde et le boulet
  * \author Thibault HUCKERT, Claire REMY (édition)
  */
 #include "ofMain.h"
@@ -14,7 +14,7 @@
 
 /*!
  * \class Rope
- * \brief Implémentation d'une corde lestee d'un boulet
+ * \brief Implementation d'une corde lestee d'un boulet
  */
 class Rope
 {

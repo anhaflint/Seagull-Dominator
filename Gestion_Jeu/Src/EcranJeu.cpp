@@ -117,9 +117,9 @@ void EcranJeu::keyPressed(int key) {
 		break;
 	case 'a':
 		if (player != NULL){
-			 GestionnairePage::EmpilerPage(new Menu_ameliorations(player.get()));
-		 }
-		 break;
+			GestionnairePage::EmpilerPage(new Menu_ameliorations(player.get()));
+		}
+		break;
 	}
 }
 //--------------------------------------------------------------

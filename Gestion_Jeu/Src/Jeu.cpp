@@ -9,8 +9,8 @@
 
 Jeu::Jeu() :score(0), point(0), season(SPRING),year(0) {
 	printf("sfs");
-	prevCallBack = new ScoreCounter();
-	currentCallBack = new ScoreCounter();
+//	prevCallBack = new ScoreCounter();
+	//currentCallBack = new ScoreCounter();
 	for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
 		DownPos[i] = ofPtr<b2Vec2>(new b2Vec2(i * 160, 720));
 		printf("nttf\n");
@@ -36,16 +36,13 @@ Jeu::~Jeu() {
 }
 
 void Jeu::initJeu(){
-	
-/*----------------------------------------------Initialisation du temps de jeu------------------------------------------------------*/
-
+	//Initialisation du temps de jeu
 	time = ofGetElapsedTimef();
 
-/*----------------------------------------------Initialisation du score-------------------------------------------------------------*/
-
+	//Initialisation du score
 	score = 0;
 
-/*----------------------------------------------Creation de quelques chateaux initaux au jeu----------------------------------------*/
+	//Creation de quelques chateaux initaux au jeu
 	int rand = ofRandom(0, EMPLACEMENT_CHATEAU - 1);
 	
 	for (int i = 0; i < 2; i++){
@@ -81,21 +78,21 @@ void Jeu::drawChateau(){
 			prevCallBack = currentCallBack;
 		}
 		
-		ScoreCounter current;
+		ScoreCounter* current;
 		b2AABB aabb;
 		aabb.lowerBound = lower;
 		aabb.upperBound = upper;
-		GestionnairePage::box2d.getWorld()->QueryAABB(&current, aabb);
+		GestionnairePage::box2d.getWorld()->QueryAABB(current, aabb);
 		
-		currentCallBack = &current;
+		
+		currentCallBack = current;
 		
 		if (currentCallBack->getSize() <= prevCallBack->getSize() && tabCastle[0] != NULL){
 				score += tabCastle[0]->getNbGrains() - currentCallBack->getSize();
 			//std::cout << "Score : " << score << std::endl;
 			std::cout << "taille current : " << currentCallBack->getSize() << std::endl;
 			std::cout << "taille previous : " << prevCallBack->getSize() << std::endl;
-		}
-		
+		}		
 	}
 	
 

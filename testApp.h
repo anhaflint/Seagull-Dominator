@@ -16,6 +16,10 @@
 
 // -------------------------------------------------
 
+/*!
+ * \class testApp
+ * \brief Gestion de l'application
+ */
 class testApp : public ofBaseApp {
 	
 public:

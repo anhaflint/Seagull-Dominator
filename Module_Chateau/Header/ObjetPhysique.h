@@ -9,6 +9,10 @@
 #include "Position.h"
 #include "ofMain.h"
 
+/*!
+ * \class ObjetPhysique
+ * \brief Classe servant a gerer les objets physiques
+ */
 class ObjetPhysique {
 protected:
 	ofVec2f pos;

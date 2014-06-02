@@ -6,6 +6,10 @@
  */
 #include <time.h>
 
+/*!
+ * \class Timer
+ * \brief Classe permettant de gerer le temps
+ */
 class Timer {
 public:
 	/*!

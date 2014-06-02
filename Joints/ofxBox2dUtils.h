@@ -29,13 +29,14 @@ public:
 	
 	bool ReportFixture(b2Fixture* fixture) {
 		b2Body* body = fixture->GetBody();
+		printf("prout \n");
 		if (body->GetType() == b2_dynamicBody)
 		{
 			bool inside = fixture->TestPoint(m_point);
 			if (inside)
 			{
 				m_fixture = fixture;
-				
+				printf("pouet \n");
 				// We are done, terminate the query.
 				return false;
 			}
