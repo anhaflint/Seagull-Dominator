@@ -1,7 +1,10 @@
 #include "Util\Header\Fenetre.h"
 
-
-
+/*!
+* \file Fenetre.h
+* \brief Classe de gestion d'une fenetre
+* \author Quentin GROS, Mounia HAMEDI (relecture)
+*/
 Fenetre::Fenetre()
 {
 	affichage = Affichage::Instance();
