@@ -42,6 +42,11 @@ private:
 
 	ofImage *boulet;
 
+	ofImage *pause_neutre;
+	ofImage *pause_reprendre;
+	ofImage *pause_quitter;
+
+
 	ofImage *mouette_d0;
 	ofImage *mouette_d1;
 	ofImage *mouette_d2;

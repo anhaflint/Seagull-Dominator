@@ -80,6 +80,7 @@ void Menu_Principale::keyPressed(int key) {
 
 		if (key == ' ' && select == JOUER){
 			GestionnairePage::EmpilerPage(ecranjeu = new EcranJeu());
+			ofResetElapsedTimeCounter();
 		}
 
 		else if (key == ' ' && select == QUITTER){
@@ -121,6 +122,7 @@ void Menu_Principale::mousePressed(int x, int y, int button) {
 	{
 		if (x<800 && x>500 && y > 460 && y<525 && button == OF_MOUSE_BUTTON_LEFT){
 			GestionnairePage::EmpilerPage(new EcranJeu());			//Empiler un jeu
+			ofResetElapsedTimeCounter();
 		}
 		//else if (x<800 && x>500 && y>525 && y<590 && button == OF_MOUSE_BUTTON_LEFT)
 		//Empiler un high_score

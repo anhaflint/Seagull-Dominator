@@ -119,6 +119,7 @@ void Rope::draw(){
 	/* On dessine les morceaux */
 	for (int i = 0; i < length+1; i++) {
 		if (i < length) {
+			ofFill();
 			ofSetColor(90, 60, 17);
 			circles[i].get()->draw(); 
 		}

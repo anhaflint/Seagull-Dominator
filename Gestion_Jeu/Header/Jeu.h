@@ -8,9 +8,10 @@
 class Jeu
 {
 private:
+	int nbapparition = 1;
 	int season;
 	
-	float time;
+	unsigned long time;
 	int score;
 	int point;
 	int year;
@@ -20,8 +21,9 @@ private:
 	ScoreCounter* currentCallBack;
 
 public:
+	bool maybeNewYear();
 	int getCastleApparitionTime();
-	void maybeNewChateau();
+	void NewChateaux();
 	void drawChateau();
 	void initJeu();
 	inline int getYearNumber() { return year; }
