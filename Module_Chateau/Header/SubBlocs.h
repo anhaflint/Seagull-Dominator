@@ -2,8 +2,8 @@
 
 /*!
  * \file SubBlocs.h
- * \brief Classes heritant de bloc afin de créer les differents blocs
- * \author Claire REMY
+ * \brief Classes heritant de bloc afin de creer les differents blocs
+ * \author Claire REMY, Quentin GROS (relecture)
  */
 #include "Module_Chateau\Header\Bloc.h"
 
@@ -24,12 +24,12 @@ public :
 
 /*!
  * \class MedBloc
- * \brief Bloc intermédiaire d'un château
+ * \brief Bloc intermediaire d'un chateau
  */
 class MedBloc : public Bloc {
 public :
 	/*!
-	 * \brief Constructeur d'un bloc intermédiaire
+	 * \brief Constructeur d'un bloc intermediaire
 	 * 
 	 * \param mouseX position X du bloc
 	 * \param mouseY position Y du bloc
@@ -39,7 +39,7 @@ public :
 
 /*!
  * \class TopBloc
- * \brief Bloc de haut d'un château
+ * \brief Bloc de haut d'un chateau
  */
 class TopBloc : public Bloc {
 public :

@@ -3,8 +3,8 @@
 
 /*!
  * \file Bloc.h
- * \brief Classe bloc composant un château
- * \author Claire REMY
+ * \brief Classe bloc composant un chateau
+ * \author Claire REMY, Quentin GROS (relecture) 
  */
 
 
@@ -17,15 +17,15 @@
 
 /*!
  * \class Bloc
- * \brief Classe bloc composant un château
+ * \brief Classe bloc composant un chateau
  */
 class Bloc : public ObjetPhysique {
 protected : 
 	int length; /*!< Longueur du bloc */
 	int height; /*!< Hauteur du bloc */
 	int nbGrains; /*!< Nombre de grains dans un bloc */
-	Affichage *affichage; /*!< Pointeur vers une instance de classe Affichage afin de gérer les images */
-	vector <ofPtr<Grains>> grains; /*!< Vecteur de grains composant le château */
+	Affichage *affichage; /*!< Pointeur vers une instance de classe Affichage afin de gerer les images */
+	vector <ofPtr<Grains>> grains; /*!< Vecteur de grains composant le chateau */
 
 public : 
 	/*!
@@ -39,12 +39,12 @@ public :
 	Bloc(int length, int height, int mouseX, int mouseY);
 
 	/*!
-	 * \brief Fonction retournant le nombre de grains composant un château
+	 * \brief Fonction retournant le nombre de grains composant un chateau
 	 */
 	inline int getNbGrains(){ return length*height; }
 
 	/*!
-	 * \brief Fonction permettant de dessiner un bloc à l'écran
+	 * \brief Fonction permettant de dessiner un bloc à l'ecran
 	 */
 	virtual void draw();
 
@@ -60,7 +60,7 @@ public :
 
 	/*!
 	 * \brief Fonction permettant la suppression d'un bloc
-	 * Cette fonction supprime tous les grains composant un bloc
+	 * Cette fonction qui supprime tous les grains composant un bloc
 	 */
 	void destroy();
 

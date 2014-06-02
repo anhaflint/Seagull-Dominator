@@ -2,14 +2,14 @@
 
 /*!
  * \file Position.h
- * \brief Classe permettant de gérer la position d'un objet
- * \author Quentin GROS
+ * \brief Classe permettant de gerer la position d'un objet
+ * \author Quentin GROS, Claire REMY (relecture)
  */
 
 /*!
  * \class Position
- * \brief Classe permettant de gérer la position d'un objet
- * Cette classe n'est pas utilisée
+ * \brief Classe permettant de gerer la position d'un objet
+ * Cette classe n'est pas utilisee
  */
 class Position {
 protected:

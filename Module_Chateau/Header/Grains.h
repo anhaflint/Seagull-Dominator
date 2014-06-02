@@ -3,8 +3,8 @@
 
 /*!
  * \file Grains.h
- * \brief Classe représentant un grain d'un bloc
- * \author Claire REMY
+ * \brief Classe representant un grain d'un bloc
+ * \author Claire REMY, Quentin GROS (relecture)
  */
 
 #include "ofxBox2d.h"
@@ -15,34 +15,34 @@
 
 /*!
  * \class
- * \brief Classe représentant un grain d'un bloc
- * hérite de la classe ofxBox2dRect
+ * \brief Classe representant un grain d'un bloc
+ * herite de la classe ofxBox2dRect
  */
 class Grains : public ObjetPhysique, public ofxBox2dRect {
 protected:
-	Timer timer; /*!< Timer permettant de décompter le temps jusqu'à la disparition d'un grain */
-	ofVec2f current; /*!< Position courante du grain, fonctionnalité pas encore utilisée */
+	Timer timer; /*!< Timer permettant de decompter le temps jusqu'a la disparition d'un grain */
+	ofVec2f current; /*!< Position courante du grain, fonctionnalite pas encore utilisee */
 public:
 	static const int size = 5; /*!< taille d'un grain */
 
 	/*! 
-	 * \brief Constructeur par défaut de la classe grain
+	 * \brief Constructeur par defaut de la classe grain
 	 */
 	Grains();
 
 	/*!
 	 * \brief Constructeur de la classe Grain permettant de stocker la position
-	 * Cette Fonctionnalité n'est pas encore utilisée
+	 * Cette Fonctionnalite n'est pas encore utilisee
 	 */
 	Grains(ofVec2f);
 
 	/*!
-	 * \brief Fonction permettant la disparition d'un grain après un certain temps
+	 * \brief Fonction permettant la disparition d'un grain apres un certain temps
 	 */
 	void disparition();
 
 	/*!
-	 * \brief Fonction permettant de dessiner un grain à l'écran
+	 * \brief Fonction permettant de dessiner un grain a l'ecran
 	 */
 	virtual void draw();
 };

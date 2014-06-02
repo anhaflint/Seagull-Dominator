@@ -4,8 +4,8 @@
 
 /*!
  * \file Castle.h
- * \brief Classe château
- * \author Claire REMY
+ * \brief Classe chateau
+ * \author Claire REMY, Quentin GROS (relecture) 
  */
 #include "ofMain.h"
 #include "ofxBox2d.h"
@@ -13,21 +13,21 @@
 
 /*! 
  * \class Castle
- * \brief Classe château
+ * \brief Classe chateau
  */
 class Castle : public ObjetPhysique {
 protected :
 	ofPtr<Bloc> base; /*!< Pointeur vers le bloc de base */
-	ofPtr<Bloc> med; /*!< Pointeur vers le bloc intermédiaire */
+	ofPtr<Bloc> med; /*!< Pointeur vers le bloc intermediaire */
 	ofPtr<Bloc> top;  /*!< Pointeur vers le dernier bloc */
-	int nbGrains; /*!< Nombre de grains composant le château */
+	int nbGrains; /*!< Nombre de grains composant le chateau */
 
 public :
 	/*!
 	 * \brief Constructeur de la classe Castle
 	 * 
-	 * \param mouseX position X du château
-	 * \param mouseY position Y du château
+	 * \param mouseX position X du chateau
+	 * \param mouseY position Y du chateau
 	 */
 	Castle(int mouseX, int mouseY);
 
@@ -37,17 +37,17 @@ public :
 	~Castle();
 
 	/*!
-	 * \brief Fonction permettant de dessiner un château à l'écran
+	 * \brief Fonction permettant de dessiner un chateau à l'ecran
 	 */
 	virtual void draw();
 
 	/*!
-	 * \brief Fonction retournant le nombre de grains composant un château
+	 * \brief Fonction retournant le nombre de grains composant un chateau
 	 */
 	int getNbGrains();
 
 	/*!
-	 * \brief Fonction permettant la destruction de tous les blocs composant un château
+	 * \brief Fonction permettant la destruction de tous les blocs composant un chateau
 	 */
 	void destroy();
 };
