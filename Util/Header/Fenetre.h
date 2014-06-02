@@ -21,9 +21,8 @@ public:
 	/*!
 	 * \brief Fonction d'affichage d'une fenetre
 	 * \param IMG Image a afficher
-	 * \param pos position
 	 */
-	void aff_fenetre(IMG, int, int);
+	void aff_fenetre(IMG);
 
 	/*!
 	 * \brief Constructeur

@@ -1,3 +1,9 @@
+/*!
+* \file Menu_ameliorations.h
+* \brief Classe permettant de gerer l'amelioration des attributs du joueur
+* \author Thibault HUCKERT, Quentin GROS (édition)
+*/
+
 #include "Gestion_Jeu\Header\Menu_ameliorations.h"
 
 
@@ -30,7 +36,7 @@ void Menu_ameliorations::update() {
 //--------------------------------------------------------------
 void Menu_ameliorations::draw() {
 	ofSetColor(255, 255, 255);	//Image claire
-	this->fenetre->aff_fenetre((IMG)select, 1280, 720);
+	this->fenetre->aff_fenetre((IMG)select);
 
 	string infoBoulet = to_string(compteurBoulet);
 	string infoMouette = to_string(compteurMouette);

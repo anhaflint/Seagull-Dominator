@@ -79,7 +79,7 @@ void EcranJeu::draw() {
 
 	string info = "";
 	ofSetColor(255, 255, 255);	//Image claire
-	this->fenetre->aff_fenetre(BACKGROUND, 1280, 720);
+	this->fenetre->aff_fenetre(BACKGROUND);
 	jeu->drawChateau();
 	if (player) {
 		player->draw();

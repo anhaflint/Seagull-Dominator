@@ -1,3 +1,9 @@
+/*!
+* \file Jeu.h
+* \brief Gestion du jeu
+* \author Quentin GROS, Claire REMY (ajouts), Thibault HUCKERT (ajouts)
+*/
+
 #include "Gestion_Jeu/header/Jeu.h"
 
 

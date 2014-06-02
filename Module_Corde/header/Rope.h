@@ -3,7 +3,7 @@
 /*!
  * \file Rope.h
  * \brief Classe représentant la corde et le boulet
- * \author Thibault HUCKERT, Claire REMY (relecture, édition)
+ * \author Thibault HUCKERT, Claire REMY (édition)
  */
 #include "ofMain.h"
 #include "ofxBox2d.h"
