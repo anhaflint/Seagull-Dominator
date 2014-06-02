@@ -8,14 +8,8 @@
 
 
 Jeu::Jeu() :score(0), point(0), season(SPRING),year(0) {
-<<<<<<< HEAD
-	printf("sfs");
-//	prevCallBack = new ScoreCounter();
+	//prevCallBack = new ScoreCounter();
 	//currentCallBack = new ScoreCounter();
-=======
-	prevCallBack = new ScoreCounter();
-	currentCallBack = new ScoreCounter();
->>>>>>> c2623f62a862c782984b6b0ef22761da9b8d7eff
 	for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
 		DownPos[i] = ofPtr<b2Vec2>(new b2Vec2(i * 160, 720));
 	}
@@ -40,15 +34,8 @@ Jeu::~Jeu() {
 }
 
 void Jeu::initJeu(){
-<<<<<<< HEAD
 	//Initialisation du temps de jeu
-	time = ofGetElapsedTimef();
-=======
-	
-/*----------------------------------------------Initialisation du temps de jeu------------------------------------------------------*/
-
 	time = 0;
->>>>>>> c2623f62a862c782984b6b0ef22761da9b8d7eff
 
 	//Initialisation du score
 	score = 0;
@@ -71,6 +58,7 @@ void Jeu::drawChateau(){
 		b2Vec2 upper(max(DownPos[i]->x, UpPos[i]->x), max(DownPos[i]->y, UpPos[i]->y));
 		if (tabCastle[i] != NULL)
 			tabCastle[i]->draw();
+		/*
 		//printf("fgylvbhj\n");
 		lower.x = 0+i*160;
 		lower.y = 720;
@@ -104,6 +92,7 @@ void Jeu::drawChateau(){
 			std::cout << "taille current : " << currentCallBack->getSize() << std::endl;
 			std::cout << "taille previous : " << prevCallBack->getSize() << std::endl;
 		}		
+		*/
 	}
 	
 

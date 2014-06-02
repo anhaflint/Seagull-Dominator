@@ -27,6 +27,9 @@ enum IMG{
 	BACKGROUND, /*!< Fond d'ecran */
 	TEXTURE_GRAINS, /*!< Texture des grains de sable */
 	BOULET, /*!< image boulet */
+	PAUSE_NEUTRE, /*!< ecran pause neutre */
+	PAUSE_REPRENDRE, /*!< Ecran pause reprendre */
+	PAUSE_QUITTER, /*!< Ecran pause quitter */
 	MOUETTE_D0, /*!< Sprite Mouette */
 	MOUETTE_D1,/*!< Sprite Mouette */
 	MOUETTE_D2,/*!< Sprite Mouette */

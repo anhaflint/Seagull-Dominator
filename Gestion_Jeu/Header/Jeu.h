@@ -36,7 +36,7 @@ public:
 	/*!
 	 * \brief Fonction permettant de decider si un nouveau chateau peut etre affiche a l'ecran
 	 */
-	void NewChateau();
+	void NewChateaux();
 
 	/*!
 	 * \brief Fonction permettant de dessiner un chateau a l'ecran
