@@ -1,9 +1,16 @@
+/*!
+* \file EcranJeu.h
+* \brief Gestion de l'ecran de jeu et de l'interaction avec le joueur
+* \author Quentin GROS, Claire REMY
+*/
+
 #include "Gestion_Jeu\Header\EcranJeu.h"
 #define VITESSE 5
 #define V_DIAG 5
+
+
 EcranJeu::EcranJeu() : PageJeu()
 {
-//	camera = ofPtr<ofEasyCam>(new ofEasyCam());
 	jeu = ofPtr<Jeu>(new Jeu());
 	fenetre = new Fenetre();
 	player = ofPtr<Joueur>(new Joueur(GestionnairePage::box2d));
@@ -108,16 +115,6 @@ void EcranJeu::keyPressed(int key) {
 	case OF_KEY_RIGHT:
 		player->move(+VITESSE, 0);
 		break;
-		/*
-	case 'm':
-		mouette = ofPtr<Mouette>(new Mouette(GestionnairePage::box2d));
-		break;
-		*/
-		/*
-	case 'k':
-		player = ofPtr<Joueur>(new Joueur(GestionnairePage::box2d));
-		break;
-		*/
 	case 'a':
 		if (player != NULL){
 			 GestionnairePage::EmpilerPage(new Menu_ameliorations(player.get()));
@@ -143,7 +140,6 @@ void EcranJeu::mousePressed(int x, int y, int button) {
 //--------------------------------------------------------------
 void EcranJeu::mouseReleased(int x, int y, int button) {
 }
-
 //--------------------------------------------------------------
 void EcranJeu::resized(int w, int h){
 }
