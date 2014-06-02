@@ -1,6 +1,10 @@
 #include "Module_Corde/header/rope.h"
 
-/* Constructeur */
+/*!
+ * \file Rope.cpp
+ * \brief Classe représentant la corde et le boulet
+ */
+
 Rope::Rope(b2Vec2* pos, int length, ofxBox2d* box2d) : length(length), box2d(box2d)
 {
 	affichage = Affichage::Instance();

@@ -1,6 +1,10 @@
 #include "Module_Chateau\Header\Bloc.h"
 
-
+/*!
+ * \file Bloc.cpp
+ * \brief Classe Bloc
+ * \author Claire REMY
+ */
 Bloc::Bloc(int length, int height, int mouseX, int mouseY) {
 	affichage = Affichage::Instance();
 	this->height = height;

@@ -1,9 +1,16 @@
+/*!
+* \file EcranJeu.h
+* \brief Gestion de l'ecran de jeu et de l'interaction avec le joueur
+* \author Quentin GROS, Claire REMY
+*/
+
 #include "Gestion_Jeu\Header\EcranJeu.h"
 #define VITESSE 5
 #define V_DIAG 5
+
+
 EcranJeu::EcranJeu() : PageJeu()
 {
-//	camera = ofPtr<ofEasyCam>(new ofEasyCam());
 	jeu = ofPtr<Jeu>(new Jeu());
 	fenetre = new Fenetre();
 	player = ofPtr<Joueur>(new Joueur(GestionnairePage::box2d));
@@ -48,6 +55,7 @@ void EcranJeu::update() {
 			player->move(+V_DIAG, +V_DIAG);
 		}
 	}
+	/*
 	b2Vec2 lower;
 	b2Vec2 upper;
 	ScoreCounter queryCallback;
@@ -61,6 +69,7 @@ void EcranJeu::update() {
 		aabb.upperBound = upper;
 		GestionnairePage::box2d.getWorld()->QueryAABB(&queryCallback, aabb);
 	}
+	*/
 	GestionnairePage::box2d.update();
 }
 
@@ -70,7 +79,7 @@ void EcranJeu::draw() {
 
 	string info = "";
 	ofSetColor(255, 255, 255);	//Image claire
-	this->fenetre->aff_fenetre(BACKGROUND, 1280, 720);
+	this->fenetre->aff_fenetre(BACKGROUND);
 	jeu->drawChateau();
 	if (player) {
 		player->draw();
@@ -106,16 +115,6 @@ void EcranJeu::keyPressed(int key) {
 	case OF_KEY_RIGHT:
 		player->move(+VITESSE, 0);
 		break;
-		/*
-	case 'm':
-		mouette = ofPtr<Mouette>(new Mouette(GestionnairePage::box2d));
-		break;
-		*/
-		/*
-	case 'k':
-		player = ofPtr<Joueur>(new Joueur(GestionnairePage::box2d));
-		break;
-		*/
 	case 'a':
 		if (player != NULL){
 			
@@ -144,7 +143,6 @@ void EcranJeu::mousePressed(int x, int y, int button) {
 //--------------------------------------------------------------
 void EcranJeu::mouseReleased(int x, int y, int button) {
 }
-
 //--------------------------------------------------------------
 void EcranJeu::resized(int w, int h){
 }

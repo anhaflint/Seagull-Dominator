@@ -1,6 +1,13 @@
 #include "Module_Chateau\Header\Grains.h"
 
 
+/*!
+ * \file Grains.cpp
+ * \brief classe Grains
+ * \author Claire REMY
+ */
+
+
 Grains::Grains() : ofxBox2dRect() {
 }
 

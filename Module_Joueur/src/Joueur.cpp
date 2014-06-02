@@ -1,10 +1,12 @@
 #include "Module_Joueur/header/Joueur.h"
 
 
-
+/*!
+ * \file Joueur.cpp 
+ * \brief Classe permettant de gerer le joueur et de le creer
+ */
 Joueur::Joueur(ofxBox2d& box2d) {
-	// Allocation de la mouette 
-	mouette = ofPtr<Mouette>(new Mouette(box2d));
+	mouette = ofPtr<Mouette>(new Mouette());
 	mouette->getBody()->body->SetGravityScale(-0.1f);
 	b2Vec2* vecBegin = new b2Vec2(mouette->getPositionX() + mouette->radius, mouette->getPositionY());
 	rope = ofPtr<Rope>(new Rope(vecBegin, 30, &box2d));
