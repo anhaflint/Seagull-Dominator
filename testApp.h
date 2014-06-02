@@ -1,4 +1,10 @@
 #pragma once
+
+/*!
+ * \file testApp.h
+ * \brief Gestion de l'application
+ * \author Quentin GROS, Claire REMY (relecture)
+ */
 #include "ofMain.h"
 #include "ofxBox2d.h"
 #include <stdio.h>
