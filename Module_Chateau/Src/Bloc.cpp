@@ -23,10 +23,7 @@ void Bloc::draw() {
 	for (int i = 0; i < grains.size(); i++) {
 		ofNoFill();
 		ofSetHexColor(0xEFD807);
-		//ofSetColor(255, 255, 255); pour la vrai image
-		//grains[i].get()->Grains::draw();
 		this->affichage->aff_img(TEXTURE_GRAINS, (int)grains[i].get()->getPosition().x - 10, (int)grains[i].get()->getPosition().y - 10, 10, 10);
-		//img.draw(grains[i].get()->getPosition().x-7, grains[i].get()->getPosition().y-7,14,14);
 	}
 }
 
