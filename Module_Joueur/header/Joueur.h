@@ -3,7 +3,7 @@
 /*!
  * \file Joueur.h
  * \brief Classe permettant de gerer le joueur et de le creer
- * \author Claire REMY, Quentin GROS (relecture)
+ * \author Claire REMY, Thibault HUCKERT (getter et setter), Quentin GROS (relecture)
  */
 #include "ofMain.h"
 #include "ofxBox2d.h"
@@ -18,7 +18,7 @@
 class Joueur {
 private :
 	string name; /*!< Nom du joueur, pas encore utilise */
-	unsigned int score; /*!< Score du joueur */
+	unsigned int points; /*!< Points a depenser du joueur dans le menu d'amelioration*/
 	ofPtr<Rope> rope; /*!< Corde du joueur */
 	ofPtr<Mouette> mouette; /*!< Mouette que manipule le joueur*/
 
@@ -85,4 +85,15 @@ public :
 	 * \brief Setter de la taille du boulet
 	 */
 	void setTailleBoulet(int);
+
+	/*!
+	* \brief Accesseur vers les points d'amélioration du joueur
+	*/
+	int getPoints();
+
+	/*!
+	* \brief Setter vers les points d'améliorations du joueur
+	*/
+	void setPoints(int points);
+
 };

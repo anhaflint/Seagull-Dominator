@@ -22,7 +22,7 @@ public :
 	 * \brief Fonction permettant de stocker les corps detectes dans l'aire scannee
 	 */
 	bool ReportFixture(b2Fixture* fixture) {
-		cout << "coucou" << endl;
+		printf("coucou \n");
 		foundBodies.push_back(fixture->GetBody());
 		return true;
 	};

@@ -57,6 +57,9 @@ Affichage::Affichage()	//Constructeur appelé par instance une seule et unique fo
 	this->pause_quitter = new ofImage;
 	this->pause_quitter->loadImage(getAbsolutePath("Pause_quitter.png"));
 
+	this->high_score = new ofImage;
+	this->high_score->loadImage(getAbsolutePath("highscore.jpg"));
+
 	this->mouette_d0 = new ofImage;
 	this->mouette_d0->loadImage(getAbsolutePath("sprite_mouette/Mouette_D0.png"));
 	this->mouette_d1 = new ofImage;
@@ -566,6 +569,10 @@ void Affichage::aff_img(IMG img, int x, int y, int largeur, int hauteur)
 
 	case PAUSE_QUITTER:
 		this->pause_quitter->draw(x, y, largeur, hauteur);
+		break;
+
+	case HIGH_SCORE:
+		this->high_score->draw(x, y, largeur, hauteur);
 		break;
 
 	case MOUETTE_D0:

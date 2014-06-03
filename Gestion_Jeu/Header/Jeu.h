@@ -24,8 +24,8 @@ private:
 	int point; /*!< point */
 	int year; /*!< Annee en cours*/
 	ofPtr<b2Vec2> DownPos[EMPLACEMENT_CHATEAU], UpPos[EMPLACEMENT_CHATEAU]; /*!< Tableaux de positions des chateaux */
-	ScoreCounter* prevCallBack; /*!< CallBack precedent pour compter les points */
-	ScoreCounter* currentCallBack; /*!< Callback courant pour compter les points */
+	int prevCallBackSize; /*!< CallBack precedent pour compter les points */
+	int currentCallBackSize; /*!< Callback courant pour compter les points */
 
 public:
 	/*!
@@ -65,6 +65,18 @@ public:
 
 	ofPtr<Castle> tabCastle[EMPLACEMENT_CHATEAU]; /*!< Tableau des chateaux */
 	bool over(); /*!< */
+
+	/*!
+	* \brief Accesseur vers le score du jeu
+	*/
+	int getScore();
+
+	/*!
+	* \brief Setter vers le score du jeu
+	*/
+	void setScore(int score);
+
+
 };
 
 /*!

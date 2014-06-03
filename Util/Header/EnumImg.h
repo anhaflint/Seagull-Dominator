@@ -30,6 +30,7 @@ enum IMG{
 	PAUSE_NEUTRE, /*!< ecran pause neutre */
 	PAUSE_REPRENDRE, /*!< Ecran pause reprendre */
 	PAUSE_QUITTER, /*!< Ecran pause quitter */
+	HIGH_SCORE, /*! Ecran highscore à la fin d'une partie */
 	MOUETTE_D0, /*!< Sprite Mouette */
 	MOUETTE_D1,/*!< Sprite Mouette */
 	MOUETTE_D2,/*!< Sprite Mouette */

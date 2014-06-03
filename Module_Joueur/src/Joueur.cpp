@@ -4,13 +4,16 @@
 /*!
  * \file Joueur.cpp 
  * \brief Classe permettant de gerer le joueur et de le creer
+ * \author Claire REMY, Thibault HUCKERT (getter et setter), Quentin GROS (relecture)
  */
 Joueur::Joueur(ofxBox2d& box2d) {
 	mouette = ofPtr<Mouette>(new Mouette());
 	mouette->getBody()->body->SetGravityScale(-0.1f);
 	b2Vec2* vecBegin = new b2Vec2(mouette->getPositionX() + mouette->radius, mouette->getPositionY());
-	rope = ofPtr<Rope>(new Rope(vecBegin, 30, &box2d));
+	rope = ofPtr<Rope>(new Rope(vecBegin, 30));
 	rope->joinBegin(mouette->getBody()->body);
+
+	points = 0;
 }
 
 
@@ -41,9 +44,7 @@ Joueur::~Joueur() {
 }
 
 int Joueur::getForceMouette(){
-	b2MassData *data = new b2MassData();
-	mouette->getBody()->body->GetMassData(data);
-	return (int) data->mass;
+	return (int)mouette->getBody()->density;
 }
 
 int Joueur::getTailleCorde(){
@@ -55,11 +56,19 @@ int Joueur::getTailleBoulet(){
 }
 
 void Joueur::setForceMouette(int v){
-	mouette->getBody()->setDensity((float)v);
+	mouette->getBody()->setDensity(120.0f - (float)v);
 }
 void Joueur::setTailleCorde(int v){
 	rope->grow(v-rope->getLongueur());
 }
 void Joueur::setTailleBoulet(int v){
 	rope->setTailleBoulet((float)v);
+}
+
+int Joueur::getPoints(){
+	return this->points;
+}
+
+void Joueur::setPoints(int points){
+	this->points = points;
 }

@@ -13,6 +13,7 @@
 #include "Gestion_Jeu\Header\Jeu.h"
 #include "ScoreCounter.h"
 #include "Menu_pause.h"
+#include "Page_highscore.h"
 #include "Util/Header/EnumImg.h"
 
 

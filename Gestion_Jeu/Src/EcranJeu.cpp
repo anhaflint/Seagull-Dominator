@@ -27,6 +27,7 @@ EcranJeu::~EcranJeu()
 void EcranJeu::update() {
 	if (jeu->over()){
 		GestionnairePage::DepilerPage();
+		GestionnairePage::EmpilerPage(new Page_highscore(jeu.get()));
 		for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
 			if (jeu->tabCastle[i] != NULL){
 				jeu->tabCastle[i]->destroy();
@@ -38,6 +39,7 @@ void EcranJeu::update() {
 	}
 	
 	if (jeu->maybeNewYear()){
+		player->setPoints(player->getPoints() + 10);
 		GestionnairePage::EmpilerPage(new Menu_ameliorations(player.get()));
 	}
 
@@ -55,21 +57,9 @@ void EcranJeu::update() {
 			player->move(+V_DIAG, +V_DIAG);
 		}
 	}
-	/*
-	b2Vec2 lower;
-	b2Vec2 upper;
-	ScoreCounter queryCallback;
-	b2AABB aabb;
-	for (int i = 0; i < EMPLACEMENT_CHATEAU; i++){
-		lower.x = 0 + i * 160;
-		lower.y = 720;
-		upper.x = 100 + i * 160;
-		upper.y = 620;
-		aabb.lowerBound = lower;
-		aabb.upperBound = upper;
-		GestionnairePage::box2d.getWorld()->QueryAABB(&queryCallback, aabb);
-	}
-	*/
+
+	jeu->setScore(jeu->getScore()+1);
+
 	GestionnairePage::box2d.update();
 }
 
@@ -88,11 +78,11 @@ void EcranJeu::draw() {
 	GestionnairePage::box2d.drawGround();
 
 
-	info += "Fleches directionelles pour deplacer la mouette\n";
-	info += "Appuyer sur [a] pour acceder au menu des ameliorations de la mouette\n";
-	info += "Total Bodies: " + ofToString(GestionnairePage::box2d.getBodyCount()) + "\n";
-	info += "Total Joints: " + ofToString(GestionnairePage::box2d.getJointCount()) + "\n\n";
-	info += "FPS: " + ofToString(ofGetFrameRate(), 1) + "\n";
+	info += "Detruis les chateaux en utilisant les fleches directionelles pour deplacer la mouette\n";
+//	info += "Total Bodies: " + ofToString(GestionnairePage::box2d.getBodyCount()) + "\n";
+//	info += "Total Joints: " + ofToString(GestionnairePage::box2d.getJointCount()) + "\n\n";
+//	info += "FPS: " + ofToString(ofGetFrameRate(), 1) + "\n";
+	info += "SCORE : " + ofToString(jeu->getScore()) + "\n";
 	ofSetHexColor(0x444342);
 	ofDrawBitmapString(info, 30, 30);
 

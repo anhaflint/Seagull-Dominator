@@ -12,14 +12,17 @@ Menu_ameliorations::Menu_ameliorations(Joueur* joueur) : joueur(joueur)
 {
 	select = AMELIORATION_AUCUN;
 	fenetre = new Fenetre();
-	
+
 	fontBoulet.loadFont(getAbsolutePath("BebasNeue.otf"), 40);
 	fontMouette.loadFont(getAbsolutePath("BebasNeue.otf"), 40);
 	fontCorde.loadFont(getAbsolutePath("BebasNeue.otf"), 40);
-	
+	fontPoints.loadFont(getAbsolutePath("BebasNeue.otf"), 40);
+
 	compteurBoulet = joueur->getTailleBoulet();
 	compteurCorde = joueur->getTailleCorde();
 	compteurMouette = joueur->getForceMouette();
+	compteurPoints = joueur->getPoints();
+
 }
 
 
@@ -41,11 +44,15 @@ void Menu_ameliorations::draw() {
 	string infoBoulet = to_string(compteurBoulet);
 	string infoMouette = to_string(compteurMouette);
 	string infoCorde = to_string(compteurCorde);
-	
-	fontBoulet.drawString(infoBoulet, 1043+80, 221+45);
-	fontMouette.drawString(infoMouette, 1043+80, 366+45);
-	fontCorde.drawString(infoCorde, 1042+80, 90+45);
-	
+	string infoPoints = "Points a depenser : ";
+	infoPoints.append(to_string(compteurPoints));
+
+
+	fontBoulet.drawString(infoBoulet, 1043 + 80, 221 + 45);
+	fontMouette.drawString(infoMouette, 1043 + 80, 366 + 45);
+	fontCorde.drawString(infoCorde, 1042 + 80, 90 + 45);
+	fontPoints.drawString(infoPoints, (1280 / 2)-200, 510);
+
 
 }
 
@@ -69,29 +76,49 @@ void Menu_ameliorations::keyPressed(int key) {
 	else if ((key == OF_KEY_DOWN && select == BOULET_PLUS) || (key == OF_KEY_RIGHT && select == MOUETTE_MOINS) || (key == OF_KEY_UP && select == CONFIRMER)) {
 		select = MOUETTE_PLUS;
 	}
-	else if (key == OF_KEY_DOWN && (select == MOUETTE_MOINS ||select == MOUETTE_PLUS)){
+	else if (key == OF_KEY_DOWN && (select == MOUETTE_MOINS || select == MOUETTE_PLUS)){
 		select = CONFIRMER;
 	}
 
-	if (select == CORDE_PLUS && key == ' '){
-		compteurCorde++;
+	if (compteurPoints > 0){
+		if (select == CORDE_PLUS && key == ' '){
+			compteurCorde++;
+			compteurPoints--;
+		}
+
+		else if (select == BOULET_PLUS && key == ' '){
+			compteurBoulet++;
+			compteurPoints--;
+
+		}
+
+		else if (select == MOUETTE_PLUS && key == ' '){
+			compteurMouette++;
+			compteurPoints--;
+
+		}
+
 	}
-	else if (select == CORDE_MOINS && key == ' '){
-		compteurCorde--;
+
+
+	if (compteurPoints < 10){
+		if (select == CORDE_MOINS && key == ' '){
+			compteurCorde--;
+			compteurPoints++;
+		}
+		else if (select == BOULET_MOINS && key == ' '){
+			compteurBoulet--;
+			compteurPoints++;
+
+		}
+		else if (select == MOUETTE_MOINS && key == ' '){
+			compteurMouette--;
+			compteurPoints++;
+
+		}
 	}
-	else if (select == BOULET_PLUS && key == ' '){
-		compteurBoulet++;
-	}
-	else if (select == BOULET_MOINS && key == ' '){
-		compteurBoulet--;
-	}
-	else if (select == MOUETTE_PLUS && key == ' '){
-		compteurMouette++;
-	}
-	else if (select == MOUETTE_MOINS && key == ' '){
-		compteurMouette--;
-	}
-	else if (select == CONFIRMER && key == ' '){
+
+	if (select == CONFIRMER && key == ' '){
 		joueur->setForceMouette(compteurMouette);
 		joueur->setTailleBoulet(compteurBoulet);
 		joueur->setTailleCorde(compteurCorde);
@@ -115,7 +142,7 @@ void Menu_ameliorations::mouseDragged(int x, int y, int button) {
 //--------------------------------------------------------------
 void Menu_ameliorations::mousePressed(int x, int y, int button) {
 
-	if (select == CORDE_PLUS && button == OF_MOUSE_BUTTON_LEFT){
+	/*if (select == CORDE_PLUS && button == OF_MOUSE_BUTTON_LEFT){
 		compteurCorde++;
 	}
 	else if (select == CORDE_MOINS && button == OF_MOUSE_BUTTON_LEFT){
@@ -138,7 +165,7 @@ void Menu_ameliorations::mousePressed(int x, int y, int button) {
 		joueur->setTailleBoulet(compteurBoulet);
 		joueur->setTailleCorde(compteurCorde);
 		GestionnairePage::DepilerPage();
-	}
+	}*/
 }
 
 //--------------------------------------------------------------

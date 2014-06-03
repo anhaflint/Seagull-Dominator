@@ -8,6 +8,7 @@
 #include "ofMain.h"
 #include "ofxBox2d.h"
 #include "../../Joints/ofxBox2dDistanceJoint.h"
+#include "Gestion_Jeu\Header\GestionnairePage.h"
 #include "Util\Header\Affichage.h"
 
 
@@ -24,7 +25,6 @@ private:
 	vector<ofPtr<ofxBox2dDistanceJoint>> joints; /*!< Les jointures entre chaque morceaux de la corde */
 	int length; /*!< Longueur de la corde */
 	ofxBox2dCircle *ptrBoulet;
-	ofxBox2d* box2d; /*!< Pointeur vers le jeu */
 	const float radius = 2.5f; /*!< Largeur de la corde */
 
 	const float densityCorde = 10.0; /*!< Densite de la corde */
@@ -36,15 +36,17 @@ private:
 	const float frictionBoulet = 5.0; /*!< Friction du boulet */
 	float tailleBoulet = 20.0f; /*! Taille du boulet */
 
+	b2Vec2* position; /*!< Position du dernier élément de la corde */
+
+
 public:
 	/*!
 	 * \brief Constructeur
 	 * 
 	 * \param pos pointeur vers la position de la corde
 	 * \param length longueur de la corde
-	 * \param box2d pointeur vers le monde
 	 */
-	Rope(b2Vec2* pos, int length, ofxBox2d* box2d);
+	Rope(b2Vec2* pos, int length);
 
 	/*! 
 	 * \brief Destructeur
@@ -74,13 +76,6 @@ public:
 	 * \param n Nombre de morceaux a retirer a la corde
 	 */
 	void reduce(int n); 
-
-	/*!
-	 * \brief Modifie la position du debut de la corde 
-	 * \param pos Position du debut de la corde
-	 * Cette fonction n'est pas encore testee
-	 */
-	void setPosition(b2Vec2* pos); 
 
 	/*!
 	 * \brief  Accesseur a la position du dernier element de la corde

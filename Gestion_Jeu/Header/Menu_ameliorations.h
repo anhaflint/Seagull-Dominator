@@ -22,11 +22,15 @@ private:
 	ofTrueTypeFont fontBoulet; /*!< Police d'ecriture boulet */
 	ofTrueTypeFont fontMouette; /*!< Police d'ecriture mouette */
 	ofTrueTypeFont fontCorde; /*!< Police d'ecriture corde */
+	ofTrueTypeFont fontPoints; /*!< Police d'ecriture Points */
+
 
 	Joueur *joueur; /*!< Pointeur vers le joueur */
 	int compteurBoulet; /*!< Compteur des attributs du boulet */
 	int compteurCorde; /*!< Compteur des attributs de la corde */
 	int compteurMouette; /*!< Compteur des attributs de la mouette */
+	int compteurPoints; /*!< Compteur des attributs du Points */
+
 
 public:
 	/*! 

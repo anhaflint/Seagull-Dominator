@@ -77,6 +77,8 @@ private:
 	ofImage *pause_reprendre;
 	ofImage *pause_quitter;
 
+	ofImage *high_score; /*!< Image du background highscore */
+
 	ofImage *mouette_d0;/*!< Sprite mouette */
 	ofImage *mouette_d1;/*!< Sprite mouette */
 	ofImage *mouette_d2;/*!< Sprite mouette */
