@@ -15,7 +15,6 @@ Menu_pause::~Menu_pause()
 
 //--------------------------------------------------------------
 void Menu_pause::update() {
-	//GestionnairePage::box2d.update();
 }
 
 
@@ -56,16 +55,6 @@ void Menu_pause::keyReleased(int key) {
 
 //--------------------------------------------------------------
 void Menu_pause::mouseMoved(int x, int y) {
-	/*
-		if (x<800 && x>500 && y > 460 && y<525)
-			select = JOUER;	//Jouer surligné
-		else if (x<800 && x>500 && y>525 && y<590)
-			select = HIGH_SCORE;
-		else if (x<800 && x>500 && y>590 && y < 660)
-			select = QUITTER;
-		else
-			select = AUCUN;	//Neutre
-	*/
 }
 
 //--------------------------------------------------------------
@@ -74,17 +63,6 @@ void Menu_pause::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void Menu_pause::mousePressed(int x, int y, int button) {
-	/*if (intro_fini)
-	{
-		if (x<800 && x>500 && y > 460 && y<525 && button == OF_MOUSE_BUTTON_LEFT){
-			GestionnairePage::EmpilerPage(new EcranJeu());			//Empiler un jeu
-			ofResetElapsedTimeCounter();
-		}
-		//else if (x<800 && x>500 && y>525 && y<590 && button == OF_MOUSE_BUTTON_LEFT)
-		//Empiler un high_score
-		else if (x<800 && x>500 && y>590 && y < 660 && button == OF_MOUSE_BUTTON_LEFT)
-			std::exit(0);
-	}*/
 }
 //--------------------------------------------------------------
 void Menu_pause::mouseReleased(int x, int y, int button) {

@@ -79,9 +79,6 @@ void EcranJeu::draw() {
 
 
 	info += "Detruis les chateaux en utilisant les fleches directionelles pour deplacer la mouette\n";
-//	info += "Total Bodies: " + ofToString(GestionnairePage::box2d.getBodyCount()) + "\n";
-//	info += "Total Joints: " + ofToString(GestionnairePage::box2d.getJointCount()) + "\n\n";
-//	info += "FPS: " + ofToString(ofGetFrameRate(), 1) + "\n";
 	info += "SCORE : " + ofToString(jeu->getScore()) + "\n";
 	ofSetHexColor(0x444342);
 	ofDrawBitmapString(info, 30, 30);

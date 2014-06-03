@@ -24,8 +24,6 @@ private:
 	int point; /*!< point */
 	int year; /*!< Annee en cours*/
 	ofPtr<b2Vec2> DownPos[EMPLACEMENT_CHATEAU], UpPos[EMPLACEMENT_CHATEAU]; /*!< Tableaux de positions des chateaux */
-	int prevCallBackSize; /*!< CallBack precedent pour compter les points */
-	int currentCallBackSize; /*!< Callback courant pour compter les points */
 
 public:
 	/*!

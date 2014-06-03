@@ -141,31 +141,6 @@ void Menu_ameliorations::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void Menu_ameliorations::mousePressed(int x, int y, int button) {
-
-	/*if (select == CORDE_PLUS && button == OF_MOUSE_BUTTON_LEFT){
-		compteurCorde++;
-	}
-	else if (select == CORDE_MOINS && button == OF_MOUSE_BUTTON_LEFT){
-		compteurCorde--;
-	}
-	else if (select == BOULET_PLUS && button == OF_MOUSE_BUTTON_LEFT){
-		compteurBoulet++;
-	}
-	else if (select == BOULET_MOINS && button == OF_MOUSE_BUTTON_LEFT){
-		compteurBoulet--;
-	}
-	else if (select == MOUETTE_PLUS && button == OF_MOUSE_BUTTON_LEFT){
-		compteurMouette++;
-	}
-	else if (select == MOUETTE_MOINS && button == OF_MOUSE_BUTTON_LEFT){
-		compteurMouette--;
-	}
-	else if (select == CONFIRMER && button == OF_MOUSE_BUTTON_LEFT){
-		joueur->setForceMouette(compteurMouette);
-		joueur->setTailleBoulet(compteurBoulet);
-		joueur->setTailleCorde(compteurCorde);
-		GestionnairePage::DepilerPage();
-	}*/
 }
 
 //--------------------------------------------------------------

@@ -105,22 +105,6 @@ void Rope::grow(int n){ // n est le nombre d'elements supplementaires a ajouter
 	}
 	length += n;
 
-	circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
-	ptrBoulet = circles.back().get();
-	circles.back().get()->setPhysics(densityBoulet, bouncingBoulet, frictionBoulet);
-	circles.back().get()->setup(GestionnairePage::box2d.getWorld(), position->x, position->y, tailleBoulet);
-	circles.back().get()->fixture.filter.groupIndex = -5;
-	position->y -= 40.0f;
-
-
-	circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
-	circles.back().get()->setPhysics(70, 0.1, 5);
-	circles.back().get()->setup(GestionnairePage::box2d.getWorld(), position->x, position->y, 0.1f);
-	circles.back().get()->fixture.filter.groupIndex = -5;
-	position->y -= 0.1f;
-
-	length += 2;
-
 
 	// Pour chaque morceaux-1, ajoute un joint entre chaque 
 	for (int i = prevLength-1 ; i < length; i++) {

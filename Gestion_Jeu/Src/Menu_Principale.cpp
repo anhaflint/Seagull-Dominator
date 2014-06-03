@@ -11,7 +11,6 @@ Menu_Principale::Menu_Principale()
 {
 	select = AUCUN;
 	fenetre = new Fenetre();
-//	ecranjeu = new EcranJeu();
 }
 
 
@@ -94,7 +93,6 @@ void Menu_Principale::keyPressed(int key) {
 		}
 
 		else if (key == ' ' && select == HIGH_SCORE){
-			//GestionnairePage::EmpilerPage(new EcranScore());
 		}
 	}
 }
@@ -130,8 +128,6 @@ void Menu_Principale::mousePressed(int x, int y, int button) {
 			GestionnairePage::EmpilerPage(new EcranJeu());			//Empiler un jeu
 			ofResetElapsedTimeCounter();
 		}
-		//else if (x<800 && x>500 && y>525 && y<590 && button == OF_MOUSE_BUTTON_LEFT)
-		//Empiler un high_score
 		else if (x<800 && x>500 && y>590 && y < 660 && button == OF_MOUSE_BUTTON_LEFT)
 			std::exit(0);
 	}
