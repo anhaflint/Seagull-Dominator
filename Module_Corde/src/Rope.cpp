@@ -18,7 +18,6 @@ Rope::Rope(b2Vec2* pos, int length) : length(length)
 		circles.back().get()->setup(GestionnairePage::box2d.getWorld(), position->x, position->y, radius); // Definie sa position et sa taille
 		circles.back().get()->fixture.filter.groupIndex = -5; // Ajoute le morceau au groupe des autres morceaux, afin d'empecher qu'ils ne se touchent/percutent (collide)
 		position->y -= radius; // Le morceau suivant sera ajouté juste en dessous du morceau courant
-
 	}
 
 	circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
@@ -88,9 +87,7 @@ void Rope::grow(int n){ // n est le nombre d'elements supplementaires a ajouter
 
 	int prevLength = length;
 
-	circles.at(length-2).get()->setRadius(radius);
-	circles.at(length-1).get()->setRadius(radius);
-
+	ptrBoulet->setRadius(radius);
 
 	int i;
 	b2Vec2* anchor1 = new b2Vec2();

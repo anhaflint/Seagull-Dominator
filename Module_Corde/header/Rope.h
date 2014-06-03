@@ -24,7 +24,7 @@ private:
 	vector<ofPtr<ofxBox2dCircle>> circles; /*!< Corps de la corde */
 	vector<ofPtr<ofxBox2dDistanceJoint>> joints; /*!< Les jointures entre chaque morceaux de la corde */
 	int length; /*!< Longueur de la corde */
-	ofxBox2dCircle *ptrBoulet;
+	ofxBox2dCircle *ptrBoulet; /*!< Pointeur sur le boulet */
 	const float radius = 2.5f; /*!< Largeur de la corde */
 
 	const float densityCorde = 10.0; /*!< Densite de la corde */
