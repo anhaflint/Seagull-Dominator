@@ -6,7 +6,6 @@
  * \author Quentin GROS, Claire REMY (relecture)
  */
 #include <time.h>
-#include "Position.h"
 #include "ofMain.h"
 
 /*!
