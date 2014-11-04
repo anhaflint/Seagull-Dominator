@@ -28,21 +28,21 @@ Preuve de programmes impératifs
 
 pour x == \old(y) : 
 
-  this_0: Object pointer
-  Object_alloc_table: Object alloc_table
-  swap_x: (Object, int32) memory
-  swap_y: (Object, int32) memory
-  H1: valid_struct_swap(this_0, 0, 0, Object_alloc_table)
-  result: int32
-  H2: result = select(swap_x, this_0)
-  result0: int32
-  H3: result0 = select(swap_y, this_0)
-  swap_x0: (Object, int32) memory
-  H4: swap_x0 = store(swap_x, this_0, result0)
-  swap_y0: (Object, int32) memory
-  H5: swap_y0 = store(swap_y, this_0, result)
+	this_0: Object pointer
+	Object_alloc_table: Object alloc_table
+	swap_x: (Object, int32) memory
+	swap_y: (Object, int32) memory
+	H1: valid_struct_swap(this_0, 0, 0, Object_alloc_table)
+	result: int32
+	H2: result = select(swap_x, this_0)
+	result0: int32
+	H3: result0 = select(swap_y, this_0)
+	swap_x0: (Object, int32) memory
+	H4: swap_x0 = store(swap_x, this_0, result0)
+	swap_y0: (Object, int32) memory
+	H5: swap_y0 = store(swap_y, this_0, result)
               
-  integer_of_int32(select(swap_y0, this_0)) = integer_of_int32(select(swap_x, this_0))
+	integer_of_int32(select(swap_y0, this_0)) = integer_of_int32(select(swap_x, this_0))
 
 On voit ici que des emplacements mémoire sont réservés pour stocker le contenu des variables x et y avant l’éxécution de swap() (swap_x et swap_y). 
 Ensuite, on voit qu’on a 5 hypothèses pour valider la conclusion à démontrer : 
