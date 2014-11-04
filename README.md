@@ -13,15 +13,15 @@ Preuve de programmes impératifs
 
 *Swap.java de base :* 
 	public class swap {
-	    int x;
-	    int y;
-	    /*@ ensures x == \old(y) && y == \old(x);
-	    */
-	    void swap() {
-	        int aux = x;
-	        x = y;
-	        y = aux; 
-	    }
+		int x;
+		int y;
+		/*@ ensures x == \old(y) && y == \old(x);
+		*/
+		void swap() {
+		int aux = x;
+		x = y;
+		y = aux; 
+		}
 	}
 
 **I.5 Description des obligations de preuve générées**
@@ -42,8 +42,6 @@ pour x == \old(y) :
   swap_y0: (Object, int32) memory
   H5: swap_y0 = store(swap_y, this_0, result)
               
--------------------------------------------------------------------------------
-
   integer_of_int32(select(swap_y0, this_0)) = integer_of_int32(select(swap_x, this_0))
 
 On voit ici que des emplacements mémoire sont réservés pour stocker le contenu des variables x et y avant l’éxécution de swap() (swap_x et swap_y). 
