@@ -47,10 +47,13 @@ pour x == \old(y) :
 
 On voit ici que des emplacements mémoire sont réservés pour stocker le contenu des variables x et y avant l’éxécution de swap() (swap_x et swap_y). 
 Ensuite, on voit qu’on a 5 hypothèses pour valider la conclusion à démontrer : 
+
 	integer_of_int32(select(swap_y0, this_0)) = integer_of_int32(select(swap_x, this_0))
 
 qui signifie que swap_y0 (la nouvelle valeur de y après l’éxécution de swap()) doit être égale à la valeur swap_x (la valeur de x avant éxécution de swap()).
 
 pour y == \old(x), on a **les mêmes hypothèses, seule la conclusion change** : 
+
 	integer_of_int32(select(swap_x0, this_0)) = integer_of_int32(select(swap_y, this_0))
+	
 Il faut montrer que swap_x0 (nouvelle valeur de x apres swap()) est égale à l’ancienne valeur de y (swap_y). 
